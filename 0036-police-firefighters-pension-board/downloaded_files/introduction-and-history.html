@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Citizen Board Handbook - HTML PDF Replica</title>
+  <style>
+html,body{margin:0;padding:0;background:#fff;color:#111827;font:16px/1.5 "Segoe UI",Tahoma,Arial,sans-serif}
+body{min-height:100vh}
+body.high-contrast{background:#000;color:#fff}
+body.readable-font{font-family:Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}a:hover{text-decoration:underline}
+button,input{font:inherit}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.hidden{display:none!important}
+.skip-link{position:absolute;left:12px;top:12px;transform:translateY(-180%);background:#fff;color:#111827;padding:10px 14px;border-radius:10px;z-index:1000}
+.skip-link:focus{transform:translateY(0)}
+.pdf-shell{width:100%;max-width:none;margin:0;padding:0}
+.viewer{background:#fff;border:0;border-radius:0;box-shadow:none;overflow:hidden;min-height:100vh}
+.viewer.sidebar-collapsed .viewer-body{grid-template-columns:minmax(0,1fr) 300px}
+.viewer.sidebar-collapsed .sidebar{display:none}
+.viewer.tools-collapsed .viewer-body{grid-template-columns:220px minmax(0,1fr)}
+.viewer.tools-collapsed .tools{display:none}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 14px;background:#2b2f35;border-bottom:1px solid #1c1f24}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand__badge{width:28px;height:28px;border-radius:8px;background:#e53935;color:#fff;display:grid;place-items:center;font-weight:800}
+.brand__title{font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#f9fafb}
+.brand__sub{font-size:12px;color:#aeb8c4}
+.top-actions,.toolbar-actions,.mode-toggle,.page-nav,.zoom-controls,.tool-group{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.topbar,.toolbar,.sidebar,.tools,.sidebar__head,.tools__head,.thumb-link,.transcript-list summary,.transcript-list pre,.tools__body,.tools__body p,.tools__body li,.tools__body label{color:#f3f4f6}
+.ui-btn,.ui-link,.page-input,.zoom-select{display:inline-flex;align-items:center;justify-content:center;min-height:34px;padding:0 12px;border-radius:9px;border:1px solid #4a5058;background:#3b4149;color:#f3f4f6}
+.ui-btn[aria-pressed="true"],.ui-btn.active{background:#4b5563;border-color:#6b7280;color:#fff}
+.ui-btn:hover,.ui-link:hover{background:#4a5058;text-decoration:none}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 14px;background:#3a3f46;border-bottom:1px solid #2a2e34}
+.page-input,.zoom-select{width:72px;padding:0 8px;text-align:center}
+.viewer-body{display:grid;grid-template-columns:220px minmax(0,1fr) 300px;min-height:calc(100vh - 150px);background:#fff}
+.sidebar,.tools{background:#3a3f46;border-right:1px solid #2a2e34;overflow:auto}
+.tools{border-right:0;border-left:1px solid #2a2e34}
+.sidebar__head,.tools__head{padding:14px 16px;border-bottom:1px solid #2a2e34;font-weight:700}
+.thumb-list,.tools__body,.transcript-list{padding:14px;display:grid;gap:12px}
+.thumb-link{display:grid;gap:6px;padding:10px;border-radius:12px;border:1px solid #4a5058;background:#444a53;color:#e5e7eb}
+.thumb-link.active{outline:2px solid #d1d5db}
+.thumb-link span{font-size:12px;color:#b9c2cf}
+.viewer-main{overflow:auto;background:#fff}
+.mode-panels{position:relative;height:100%}
+.mode-panel{height:100%}
+.viewer-stage{padding:22px 24px 32px;background:#fff}
+.page-stack{display:grid;gap:26px;justify-content:stretch;transform-origin:top center}
+.page-card{width:100%;display:grid;justify-items:center}
+.page-label{font-size:13px;color:#374151;margin:0 0 8px;justify-self:start;width:min(100%,816px)}
+.pdf-page{position:relative;background:#fff;box-shadow:0 12px 28px rgba(0,0,0,.18);overflow:hidden}
+.pdf-page:focus-visible{outline:3px solid #111827;outline-offset:3px}
+.pdf-page img,.pdf-page svg{position:absolute;display:block}
+.vector-layer,.image-layer,.text-layer{position:absolute;inset:0}
+.text-layer{z-index:3}
+.text-layer--assistive{opacity:.015}
+.text-span{position:absolute;display:block;white-space:pre;transform-origin:top left;color:#111;line-height:1;overflow:visible;text-rendering:geometricPrecision;box-sizing:border-box;padding:0 6px 2px 0}
+.page-fallback{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.page-outline{position:absolute;inset:0;border:1px solid rgba(0,0,0,.08);pointer-events:none}
+.pdf-frame{width:100%;height:calc(100vh - 170px);border:0;background:#fff}
+.tools .ui-btn{justify-content:flex-start}
+.tools__body .tool-row{display:grid;gap:8px}
+.tools__body ul{margin:0;padding-left:18px}
+.transcript-list details{background:#444a53;border:1px solid #555c66;border-radius:12px;padding:10px 12px}
+.transcript-list summary{cursor:pointer;font-weight:700}
+.transcript-list pre{white-space:pre-wrap;word-break:break-word;font:13px/1.45 Consolas,"Courier New",monospace}
+.back-top{position:fixed;right:18px;bottom:18px;z-index:40;border:1px solid #4a5058;background:#2b2f35;color:#fff;border-radius:999px;padding:10px 14px;box-shadow:0 12px 28px rgba(0,0,0,.22)}
+.back-top:hover{background:#3b4149}
+body.high-contrast .viewer{background:#111;border-color:#000}
+body.high-contrast .topbar,body.high-contrast .toolbar,body.high-contrast .sidebar,body.high-contrast .tools{background:#111;color:#fff}
+body.high-contrast .ui-btn,body.high-contrast .ui-link,body.high-contrast .page-input,body.high-contrast .zoom-select,body.high-contrast .thumb-link,body.high-contrast .back-top{background:#000;border-color:#fff;color:#fff}
+body.high-contrast .pdf-page{box-shadow:0 0 0 2px #fff}
+@media(max-width:1180px){.viewer-body{grid-template-columns:180px minmax(0,1fr)}.tools{display:none}}
+@media(max-width:860px){.viewer-body,.viewer.sidebar-collapsed .viewer-body,.viewer.tools-collapsed .viewer-body{grid-template-columns:1fr}.sidebar,.tools{display:none}.toolbar{align-items:flex-start;flex-direction:column}.topbar{align-items:flex-start;flex-direction:column}.pdf-frame{height:70vh}}
+</style>
+</head>
+<body data-total-pages="2">
+  <a class="skip-link" href="#viewer-main">Skip to PDF content</a>
+  <a class="skip-link" href="#tools-panel">Skip to accessibility tools</a>
+  <main class="pdf-shell" id="pdf-main" role="main" aria-label="Accessible HTML version of Citizen Board Handbook">
+    <div class="viewer">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand__badge" aria-hidden="true">A</div>
+          <div>
+            <div class="brand__title">Citizen Board Handbook</div>
+            <div class="brand__sub">introduction-and-history.pdf - 2 pages</div>
+          </div>
+        </div>
+      </header>
+        <section class="toolbar" aria-label="Document controls">
+        <div class="toolbar-actions">
+          <div class="tool-group" role="group" aria-label="Panel controls">
+            <button class="ui-btn" id="toggle-pages" type="button" aria-controls="pages-panel" aria-expanded="true" aria-pressed="true">Pages</button>
+            <button class="ui-btn" id="toggle-tools" type="button" aria-controls="tools-panel" aria-expanded="true" aria-pressed="true">Accessibility</button>
+            <button class="ui-btn" id="toggle-transcript" type="button" aria-controls="transcript-list transcript-panel" aria-expanded="false" aria-pressed="false">Transcript</button>
+          </div>
+          <div class="page-nav" role="group" aria-label="Page navigation">
+            <button class="ui-btn" id="prev-page" type="button">Previous</button>
+            <label class="sr-only" for="page-input">Current page</label>
+            <input class="page-input" id="page-input" type="number" min="1" max="2" inputmode="numeric">
+            <span>of 2</span>
+            <button class="ui-btn" id="next-page" type="button">Next</button>
+          </div>
+          <div class="zoom-controls" role="group" aria-label="Zoom controls">
+            <button class="ui-btn" id="zoom-out" type="button">-</button>
+            <span id="zoom-label" aria-live="polite">100%</span>
+            <button class="ui-btn" id="zoom-in" type="button">+</button>
+            <label class="sr-only" for="zoom-select">Zoom percent</label>
+            <select class="zoom-select" id="zoom-select" aria-label="Zoom percent">
+              <option value="50">50%</option>
+              <option value="75">75%</option>
+              <option value="100" selected>100%</option>
+              <option value="125">125%</option>
+              <option value="150">150%</option>
+              <option value="200">200%</option>
+            </select>
+            <button class="ui-btn" id="actual-size" type="button">Actual Size</button>
+            <button class="ui-btn" id="fit-page" type="button">Fit Page</button>
+            <button class="ui-btn" id="fit-width" type="button">Fit Width</button>
+          </div>
+        </div>
+        <div class="tool-group" aria-label="Viewer tools">
+          <button class="ui-btn" id="reset-view" type="button">Reset</button>
+        </div>
+      </section>
+      <div class="viewer-body">
+        <aside class="sidebar" id="pages-panel" aria-label="Pages">
+          <div class="sidebar__head">Pages</div>
+          <nav class="thumb-list" aria-label="Page thumbnails"><a class="thumb-link active" href="#page-1" data-page="1" aria-label="Jump to page 1"><strong>Page 1</strong></a><a class="thumb-link" href="#page-2" data-page="2" aria-label="Jump to page 2"><strong>Page 2</strong></a></nav>
+        </aside>
+        <section class="viewer-main" id="viewer-main" tabindex="-1" role="region" aria-label="PDF pages">
+          <div class="viewer-stage">
+            <div class="page-stack" id="page-stack" role="document" aria-label="Citizen Board Handbook pages">
+    <article class="page-card" id="page-1" data-page="1">
+      <p class="page-label">Page 1 of 2</p>
+      <section class="pdf-page" role="region" tabindex="0" aria-roledescription="PDF page" aria-labelledby="page-1-title" aria-describedby="page-1-surface-note page-1-transcript" style="width:816.00px;height:1056.00px;">
+        <h2 class="sr-only" id="page-1-title">Page 1</h2>
+        <div class="sr-only" id="page-1-surface-note">Page 1 is rendered as structured HTML with selectable text, extracted images, and vector artwork.</div>
+        <div class="sr-only" id="page-1-transcript">Citizen Board Handbook
+Introduction
+Attheheart oflocal government isHome Rule, which calls forlocal self-government by
+thecitizens. This means that, ideally, local public policy and resulting decisions isa
+product oftheinput ofallthecitizens ofthecommunity, i.e.,truedemocracy. Aquality city
+government, andthus thequality oflifeinthecommunity, canonly beobtained through
+having knowledgeable citizens who actively participate in their local government.
+Ifacitizen wishes toparticipa tedirectly incitygovernment, onemeans istoserve ona
+local government commission, board oradvisory committee. Inthecase ofcities, the
+charter generally states thelocal government ’spower tocreate commissions, boards and
+advisory committees when such needs arise, and includes thepowers, duties and
+composition ofany such permanent bodies. Temporary bodies may becreated and
+abolished by resolution or administrative order.
+Commissions andboards sometimes areassigned significant powers ofpolicy -making
+and/or administration. Advisory committees serve animportant function inproviding
+expertise incertain areas ofcityorcounty concern. Usually established attherequest of
+theCommission, they may bemade upofboth citizens andCommission memb ersand
+may deal with issues andproblems which aredeemed worthy ofspecial consideration
+andadvisement. Committees addanother degree oflocal government responsiveness to
+thepublic interest. They provide anexcellent opportunity forcitizens toactive lyparticipate
+intheoperation oftheir local government. Advisory committees arenotofthesame
+significance ascommissions orboards, lacking thepower tomake oradminister policy on
+their own. Instead, advisory committees take upmatters thatdeserve theextra attention
+and consideration that only a group of interested, concerned citizens can render.
+The City ofDaytona Beach has aCommission -Manager form ofgovernment. The
+Commission (consisting of7members, Mayor and 6City Commissioners) has and
+exercises power and control viadecision making, establishing policy fortheCity
+(legislative function), while theCityManager hastheresponsibility forensuring thatthose
+decisions and policies are carried out (executive function).
+TheCityofDayton aBeach hasatotal of25boards withtwoofthatnumber consisting of
+membership from theCityCommission. There are23citizen participation boards totaling
+approximately 200members. Thenumber ofboard members vary perboard. Most ofthe
+boards meet monthly. Some oftheboards arecreated byCity Charter, others via
+ordinances andresolutions approved bytheCityCommission. Most boards require thata
+member bearesident of(orhave abusiness in)The City ofDaytona Beach andbea
+registered voter (qualified elector). Most boards also require theboard member complete
+andprovide totheSupervisor ofElections annually, aForm 1-Financial Disclosure form.
+Allboard meetings oftheCityarecovered under thePublic Records Law, Chapter 119
+and theGovernment-in-the-Sunshine Law. Most oftheboards serve inanadvisory
+capacity. All,asaresult ofthecitizen involvement andparticipation, provide much needed
+assistance inassuring thatactions taken bytheCityarenotonly inthebest interest ofthe
+City but also have the support and input of its citizens.</div>
+        
+        <div class="image-layer"></div>
+        
+        <div class="text-layer"><span class="text-span" style="left:236.41px;top:100.26px;width:354.37px;min-height:38.40px;font-family:'Times New Roman', Times, serif;font-size:32.00px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">Citizen Board Handbook</span><span class="text-span" style="left:345.29px;top:156.15px;width:133.80px;min-height:28.80px;font-family:Arial, Helvetica, sans-serif;font-size:24.00px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">Introduction</span><span class="text-span" style="left:120.00px;top:200.59px;width:16.59px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">A</span><span class="text-span" style="left:130.59px;top:200.60px;width:10.07px;min-height:17.59px;font-family:Arial, Helvetica, sans-serif;font-size:14.66px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">t</span><span class="text-span" style="left:134.66px;top:200.59px;width:69.66px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> the heart</span><span class="text-span" style="left:198.33px;top:200.59px;width:23.16px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:215.49px;top:200.59px;width:298.88px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> local government is Home Rule, which calls</span><span class="text-span" style="left:508.36px;top:200.59px;width:28.05px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> for</span><span class="text-span" style="left:530.41px;top:200.59px;width:171.59px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> local self-government by</span><span class="text-span" style="left:120.00px;top:217.46px;width:172.07px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">the citizens. This means</span><span class="text-span" style="left:286.07px;top:217.46px;width:41.54px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> that,</span><span class="text-span" style="left:321.61px;top:217.46px;width:380.38px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> ideally, local public policy and resulting decisions is a</span><span class="text-span" style="left:120.00px;top:234.33px;width:54.91px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">product</span><span class="text-span" style="left:168.91px;top:234.33px;width:21.99px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:184.90px;top:234.33px;width:65.68px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> the input</span><span class="text-span" style="left:244.58px;top:234.33px;width:21.99px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:260.56px;top:234.33px;width:113.11px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> all the citizens o</span><span class="text-span" style="left:367.68px;top:234.33px;width:10.07px;min-height:17.59px;font-family:Arial, Helvetica, sans-serif;font-size:14.66px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">f</span><span class="text-span" style="left:371.76px;top:234.33px;width:108.86px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> the community,</span><span class="text-span" style="left:474.62px;top:234.33px;width:33.39px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> i.e.,</span><span class="text-span" style="left:502.01px;top:234.33px;width:114.56px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> true democracy.</span><span class="text-span" style="left:610.57px;top:234.33px;width:19.54px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> A</span><span class="text-span" style="left:624.11px;top:234.33px;width:77.89px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> quality city</span><span class="text-span" style="left:120.00px;top:251.19px;width:222.16px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">government, and thus the quality</span><span class="text-span" style="left:336.16px;top:251.19px;width:23.16px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:353.32px;top:251.19px;width:348.67px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> life in the community, can only be obtained through</span><span class="text-span" style="left:120.00px;top:268.06px;width:527.69px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">having knowledgeable citizens who actively participate in their local government.</span><span class="text-span" style="left:120.00px;top:303.58px;width:14.15px;min-height:17.59px;font-family:Arial, Helvetica, sans-serif;font-size:14.66px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">If</span><span class="text-span" style="left:128.15px;top:303.58px;width:115.62px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> a citizen wishes</span><span class="text-span" style="left:237.77px;top:303.58px;width:23.26px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> to</span><span class="text-span" style="left:255.03px;top:303.58px;width:66.45px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> participa</span><span class="text-span" style="left:315.48px;top:303.58px;width:18.23px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">te</span><span class="text-span" style="left:327.71px;top:303.58px;width:281.63px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> directly in city government, one means is</span><span class="text-span" style="left:603.34px;top:303.58px;width:23.26px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> to</span><span class="text-span" style="left:620.60px;top:303.58px;width:81.40px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> serve on a</span><span class="text-span" style="left:120.00px;top:320.45px;width:410.14px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">local government commission, board or advisory committee.</span><span class="text-span" style="left:524.14px;top:320.45px;width:24.59px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> In</span><span class="text-span" style="left:542.73px;top:320.45px;width:70.08px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> the case</span><span class="text-span" style="left:606.81px;top:320.45px;width:24.59px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:625.40px;top:320.45px;width:76.59px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> cities, the</span><span class="text-span" style="left:120.00px;top:337.31px;width:114.97px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">charter generally</span><span class="text-span" style="left:228.97px;top:337.31px;width:48.97px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> states</span><span class="text-span" style="left:271.94px;top:337.31px;width:145.45px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> the local government</span><span class="text-span" style="left:411.40px;top:337.31px;width:9.26px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">’</span><span class="text-span" style="left:414.66px;top:337.31px;width:57.09px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">s power</span><span class="text-span" style="left:465.75px;top:337.31px;width:22.06px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> to</span><span class="text-span" style="left:481.81px;top:337.31px;width:220.18px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> create commissions, boards and</span><span class="text-span" style="left:120.00px;top:354.18px;width:581.99px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">advisory committees when such needs arise, and includes the powers, duties and</span><span class="text-span" style="left:120.00px;top:371.05px;width:84.25px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">composition</span><span class="text-span" style="left:198.25px;top:371.05px;width:25.69px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:217.94px;top:371.05px;width:484.05px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> any such permanent bodies. Temporary bodies may be created and</span><span class="text-span" style="left:120.00px;top:387.90px;width:310.04px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">abolished by resolution or administrative order.</span><span class="text-span" style="left:120.00px;top:423.43px;width:468.22px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">Commissions and boards sometimes are assigned significant powers</span><span class="text-span" style="left:582.22px;top:423.43px;width:24.18px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:600.41px;top:423.43px;width:101.59px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> policy-making</span><span class="text-span" style="left:120.00px;top:440.30px;width:581.98px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">and/or administration. Advisory committees serve an important function in providing</span><span class="text-span" style="left:120.00px;top:457.17px;width:170.82px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">expertise in certain areas</span><span class="text-span" style="left:284.82px;top:457.17px;width:22.64px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:301.46px;top:457.17px;width:289.16px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> city or county concern. Usually established</span><span class="text-span" style="left:584.62px;top:457.17px;width:22.65px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> at</span><span class="text-span" style="left:601.27px;top:457.17px;width:84.10px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> the request</span><span class="text-span" style="left:679.36px;top:457.17px;width:22.64px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:120.00px;top:474.03px;width:266.20px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">the Commission, they may be made up</span><span class="text-span" style="left:380.20px;top:474.03px;width:23.29px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:397.49px;top:474.03px;width:304.51px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> both citizens and Commission members and</span><span class="text-span" style="left:120.00px;top:490.90px;width:419.84px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">may deal with issues and problems which are deemed worthy</span><span class="text-span" style="left:533.84px;top:490.90px;width:23.91px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:551.76px;top:490.90px;width:150.23px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> special consideration</span><span class="text-span" style="left:120.00px;top:507.75px;width:327.83px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">and advisement. Committees add another degree</span><span class="text-span" style="left:441.83px;top:507.75px;width:22.28px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:458.11px;top:507.75px;width:227.61px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> local government responsiveness</span><span class="text-span" style="left:679.72px;top:507.75px;width:22.28px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> to</span><span class="text-span" style="left:120.00px;top:524.62px;width:369.32px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">the public interest. They provide an excellent opportunity</span><span class="text-span" style="left:483.32px;top:524.62px;width:26.69px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> for</span><span class="text-span" style="left:504.02px;top:524.62px;width:58.47px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> citizens</span><span class="text-span" style="left:556.48px;top:524.62px;width:21.81px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> to</span><span class="text-span" style="left:572.29px;top:524.62px;width:129.70px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> actively participate</span><span class="text-span" style="left:120.00px;top:541.49px;width:112.69px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">in the operation</span><span class="text-span" style="left:226.69px;top:541.49px;width:25.11px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:245.80px;top:541.49px;width:367.11px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> their local government. Advisory committees are not</span><span class="text-span" style="left:606.91px;top:541.49px;width:25.10px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:626.01px;top:541.49px;width:75.99px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> the same</span><span class="text-span" style="left:120.00px;top:558.35px;width:376.97px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">significance as commissions or boards, lacking the power</span><span class="text-span" style="left:490.97px;top:558.35px;width:21.98px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> to</span><span class="text-span" style="left:506.95px;top:558.35px;width:195.05px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> make or administer policy on</span><span class="text-span" style="left:120.00px;top:575.22px;width:319.25px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">their own. Instead, advisory committees take up</span><span class="text-span" style="left:433.25px;top:575.22px;width:59.56px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> matters</span><span class="text-span" style="left:486.81px;top:575.22px;width:35.12px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> that</span><span class="text-span" style="left:515.93px;top:575.22px;width:186.06px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> deserve the extra attention</span><span class="text-span" style="left:120.00px;top:592.09px;width:527.75px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">and consideration that only a group of interested, concerned citizens can render.</span><span class="text-span" style="left:120.00px;top:627.62px;width:63.71px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">The City</span><span class="text-span" style="left:177.71px;top:627.62px;width:25.42px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:197.13px;top:627.62px;width:364.28px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> Daytona Beach has a Commission - Manager form</span><span class="text-span" style="left:555.41px;top:627.62px;width:25.42px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:574.83px;top:627.62px;width:127.17px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> government. The</span><span class="text-span" style="left:120.00px;top:644.49px;width:164.68px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">Commission (consisting</span><span class="text-span" style="left:278.68px;top:644.49px;width:26.15px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:298.82px;top:644.49px;width:403.16px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> 7 members, Mayor and 6 City Commissioners) has and</span><span class="text-span" style="left:120.00px;top:661.35px;width:490.87px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">exercises power and control via decision making, establishing policy</span><span class="text-span" style="left:604.87px;top:661.35px;width:32.58px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> for</span><span class="text-span" style="left:631.45px;top:661.35px;width:70.55px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> the City</span><span class="text-span" style="left:120.00px;top:678.22px;width:432.63px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">(legislative function), while the City Manager has the responsibility</span><span class="text-span" style="left:546.63px;top:678.22px;width:27.04px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> for</span><span class="text-span" style="left:567.67px;top:678.22px;width:66.15px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> ensuring</span><span class="text-span" style="left:627.83px;top:678.22px;width:34.39px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> that</span><span class="text-span" style="left:656.21px;top:678.22px;width:45.78px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> those</span><span class="text-span" style="left:120.00px;top:695.09px;width:382.60px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">decisions and policies are carried out (executive function).</span><span class="text-span" style="left:120.00px;top:730.61px;width:60.72px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">The City</span><span class="text-span" style="left:174.72px;top:730.61px;width:22.43px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:191.15px;top:730.61px;width:182.71px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> Daytona Beach has a total</span><span class="text-span" style="left:367.87px;top:730.61px;width:22.43px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:384.30px;top:730.61px;width:132.85px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> 25 boards with two</span><span class="text-span" style="left:511.14px;top:730.61px;width:51.09px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of that</span><span class="text-span" style="left:556.23px;top:730.61px;width:129.33px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> number consisting</span><span class="text-span" style="left:679.56px;top:730.61px;width:22.44px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:120.00px;top:747.47px;width:581.99px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">membership from the City Commission. There are 23 citizen participation boards totaling</span><span class="text-span" style="left:120.00px;top:764.34px;width:278.66px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">approximately 200 members. The number</span><span class="text-span" style="left:392.66px;top:764.34px;width:22.42px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:409.07px;top:764.34px;width:215.99px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> board members vary per board.</span><span class="text-span" style="left:619.07px;top:764.34px;width:41.96px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> Most</span><span class="text-span" style="left:655.03px;top:764.34px;width:22.41px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:671.44px;top:764.34px;width:30.56px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> the</span><span class="text-span" style="left:120.00px;top:781.21px;width:201.18px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">boards meet monthly. Some</span><span class="text-span" style="left:315.18px;top:781.21px;width:26.23px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:335.42px;top:781.21px;width:366.58px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> the boards are created by City Charter, others via</span><span class="text-span" style="left:120.00px;top:798.07px;width:407.55px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">ordinances and resolutions approved by the City Commission.</span><span class="text-span" style="left:521.55px;top:798.07px;width:41.70px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> Most</span><span class="text-span" style="left:557.25px;top:798.07px;width:104.30px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> boards require</span><span class="text-span" style="left:655.55px;top:798.07px;width:34.38px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> that</span><span class="text-span" style="left:683.93px;top:798.07px;width:18.06px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> a</span><span class="text-span" style="left:120.00px;top:814.93px;width:152.90px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">member be a resident</span><span class="text-span" style="left:266.90px;top:814.93px;width:23.73px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:284.63px;top:814.93px;width:227.03px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> (or have a business in) The City</span><span class="text-span" style="left:505.67px;top:814.93px;width:23.72px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:523.39px;top:814.93px;width:178.61px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> Daytona Beach and be a</span><span class="text-span" style="left:120.00px;top:831.79px;width:228.67px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">registered voter (qualified elector).</span><span class="text-span" style="left:342.67px;top:831.79px;width:41.90px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> Most</span><span class="text-span" style="left:378.58px;top:831.79px;width:323.42px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> boards also require the board member complete</span><span class="text-span" style="left:120.00px;top:848.66px;width:82.44px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">and provide</span><span class="text-span" style="left:196.44px;top:848.66px;width:22.12px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> to</span><span class="text-span" style="left:212.56px;top:848.66px;width:104.23px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> the Supervisor</span><span class="text-span" style="left:310.79px;top:848.66px;width:22.12px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:326.91px;top:848.66px;width:337.79px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> Elections annually, a Form 1 - Financial Disclosure</span><span class="text-span" style="left:658.70px;top:848.66px;width:43.30px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> form.</span><span class="text-span" style="left:120.00px;top:865.53px;width:129.50px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">All board meetings</span><span class="text-span" style="left:243.50px;top:865.53px;width:23.34px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:260.84px;top:865.53px;width:441.15px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> the City are covered under the Public Records Law, Chapter 119</span><span class="text-span" style="left:120.00px;top:882.39px;width:58.53px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">and the</span><span class="text-span" style="left:172.53px;top:882.39px;width:40.57px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> Gov</span><span class="text-span" style="left:207.10px;top:882.39px;width:206.07px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">ernment-in-the-Sunshine Law.</span><span class="text-span" style="left:407.17px;top:882.39px;width:45.46px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> Most</span><span class="text-span" style="left:446.63px;top:882.39px;width:25.90px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:466.53px;top:882.39px;width:235.46px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> the boards serve in an advisory</span><span class="text-span" style="left:120.00px;top:899.26px;width:157.68px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">capacity. All, as a result</span><span class="text-span" style="left:271.68px;top:899.26px;width:21.72px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:287.40px;top:899.26px;width:414.59px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> the citizen involvement and participation, provide much needed</span><span class="text-span" style="left:120.00px;top:916.13px;width:149.57px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">assistance in assuring</span><span class="text-span" style="left:263.57px;top:916.13px;width:34.19px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> that</span><span class="text-span" style="left:291.76px;top:916.13px;width:370.18px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> actions taken by the City are not only in the best interest</span><span class="text-span" style="left:655.94px;top:916.13px;width:21.95px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:671.89px;top:916.13px;width:30.10px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> the</span><span class="text-span" style="left:120.00px;top:932.99px;width:356.55px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">City but also have the support and input of its citizens.</span></div>
+        <div class="page-outline" aria-hidden="true"></div>
+      </section>
+    </article>
+    
+    <article class="page-card" id="page-2" data-page="2">
+      <p class="page-label">Page 2 of 2</p>
+      <section class="pdf-page" role="region" tabindex="0" aria-roledescription="PDF page" aria-labelledby="page-2-title" aria-describedby="page-2-surface-note page-2-transcript" style="width:816.00px;height:1056.00px;">
+        <h2 class="sr-only" id="page-2-title">Page 2</h2>
+        <div class="sr-only" id="page-2-surface-note">Page 2 is rendered as structured HTML with selectable text, extracted images, and vector artwork.</div>
+        <div class="sr-only" id="page-2-transcript">The City ofDaytona Beach ispleased toprovide the&quot;City Commission Citizen Board
+Handbook&quot; asour way ofincreasing citizen knowledge and awareness oflocal
+Government. Ifyouorsomeone youknow isinterested inbecoming aBoard Member
+Candidate, please fill out and return the Board Application Form .
+We thank you for your interest in providing service t o The City of Daytona Beach.
+History
+Incorporated 1876. Theregion inandaround what iscurrently known asDaytona Beach
+wasoriginally inhabited bytheTimucuan Indians. TheSpanish Crown laidclaim toFlorida
+inearly 1500s and later awarded Royal Land Grants totheBritish. Itwas from the
+purchase ofthese grants bynorthern Americans inthemid1800s, after theSeminole
+Indian Warof1835, thattheDaytona area began tobecome apermanent settlement. The
+name &quot;Daytona&quot; came tobebyhonoring thefound erofthesettlement, Mr.Mathias Day
+of Mansfield, Ohio .
+Onthe26th ofJulyin1876 thefirsttown meeting ofDaytona took place. Atthismeeting,
+thetown was&quot;officially&quot; named andincorporated andheld itsfirstelection naming aMayor
+(Rev. Dr. L. D. Houston), a Common Council of seven, a Clerk and a Marshall .
+Settlements were alsobeing established near athand during thissame period. There were
+twocolonies across theHalifax River from Daytona, oneknown asSeabreeze andoneby
+thename ofDaytona Beach. These three towns eventually joined forces andvoted on
+January 4, 1926 to incorporate into one city known as Daytona Beach .
+The City of Daytona Beach
+Street Address:
+301 South Ridgewood Avenue
+Mailing Address:
+Post Office Box 2451
+Daytona Beach, F lorida 32115-2451
+Main Telephone Number:
+(386) 671-8000
+Population: 72,647
+(per U.S. Census Bureau, Census 20 20)
+Form of government:
+Council-Manager (Mayor and six Commissioners)</div>
+        <svg class="vector-layer" width="816.00" height="1056.00" viewBox="0 0 816.00 1056.00" aria-hidden="true" focusable="false"><path d="M 380.09 162.21 L 547.13 162.21" fill="none" fill-opacity="None" stroke="rgb(0, 0, 255)" stroke-opacity="1.0" stroke-width="0.98" stroke-linejoin="0" stroke-linecap="round" /></svg>
+        <div class="image-layer"></div>
+        
+        <div class="text-layer"><span class="text-span" style="left:120.00px;top:98.86px;width:62.62px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">The City</span><span class="text-span" style="left:176.62px;top:98.86px;width:24.33px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:194.95px;top:98.86px;width:188.54px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> Daytona Beach is pleased</span><span class="text-span" style="left:377.49px;top:98.86px;width:24.34px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> to</span><span class="text-span" style="left:395.83px;top:98.86px;width:306.16px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> provide the &quot;City Commission Citizen Board</span><span class="text-span" style="left:120.00px;top:115.73px;width:171.54px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">Handbook&quot; as our way</span><span class="text-span" style="left:285.54px;top:115.73px;width:28.47px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:308.01px;top:115.73px;width:331.11px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> increasing citizen knowledge and awareness</span><span class="text-span" style="left:633.12px;top:115.73px;width:28.48px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:655.60px;top:115.73px;width:46.39px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> local</span><span class="text-span" style="left:120.00px;top:132.59px;width:90.77px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">Government.</span><span class="text-span" style="left:204.77px;top:132.60px;width:20.08px;min-height:17.59px;font-family:Arial, Helvetica, sans-serif;font-size:14.66px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> If</span><span class="text-span" style="left:218.86px;top:132.59px;width:483.14px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> you or someone you know is interested in becoming a Board Member</span><span class="text-span" style="left:120.00px;top:149.46px;width:266.07px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">Candidate, please fill out and return the </span><span class="text-span" style="left:380.09px;top:149.46px;width:173.04px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:700;font-style:normal;color:rgb(0, 0, 255);">Board Application Form</span><span class="text-span" style="left:547.13px;top:149.46px;width:10.07px;min-height:17.59px;font-family:Arial, Helvetica, sans-serif;font-size:14.66px;font-weight:700;font-style:normal;color:rgb(192, 192, 192);">.</span><span class="text-span" style="left:120.00px;top:184.99px;width:530.99px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">We thank you for your interest in providing service to The City of Daytona Beach.</span><span class="text-span" style="left:120.00px;top:220.53px;width:51.63px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">History</span><span class="text-span" style="left:120.00px;top:256.06px;width:10.07px;min-height:17.59px;font-family:Arial, Helvetica, sans-serif;font-size:14.66px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">I</span><span class="text-span" style="left:124.08px;top:256.06px;width:577.91px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">ncorporated 1876. The region in and around what is currently known as Daytona Beach</span><span class="text-span" style="left:120.00px;top:272.93px;width:517.84px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">was originally inhabited by the Timucuan Indians. The Spanish Crown laid claim</span><span class="text-span" style="left:631.84px;top:272.93px;width:21.78px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> to</span><span class="text-span" style="left:647.62px;top:272.93px;width:54.37px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> Florida</span><span class="text-span" style="left:120.00px;top:289.79px;width:318.96px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">in early 1500s and later awarded Royal Land</span><span class="text-span" style="left:432.96px;top:289.79px;width:57.22px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> Grants</span><span class="text-span" style="left:484.18px;top:289.79px;width:25.43px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> to</span><span class="text-span" style="left:503.62px;top:289.79px;width:85.62px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> the British.</span><span class="text-span" style="left:583.23px;top:289.80px;width:21.35px;min-height:17.59px;font-family:Arial, Helvetica, sans-serif;font-size:14.66px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> It</span><span class="text-span" style="left:598.59px;top:289.79px;width:103.41px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> was from the</span><span class="text-span" style="left:120.00px;top:306.66px;width:66.32px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">purchase</span><span class="text-span" style="left:180.32px;top:306.66px;width:24.17px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:198.49px;top:306.66px;width:374.84px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> these grants by northern Americans in the mid 1800s,</span><span class="text-span" style="left:567.33px;top:306.66px;width:41.28px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> after</span><span class="text-span" style="left:602.61px;top:306.66px;width:99.37px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> the Seminole</span><span class="text-span" style="left:120.00px;top:323.53px;width:76.48px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">Indian War</span><span class="text-span" style="left:190.48px;top:323.53px;width:21.87px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:206.35px;top:323.53px;width:46.33px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> 1835,</span><span class="text-span" style="left:246.68px;top:323.53px;width:34.11px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> that</span><span class="text-span" style="left:274.79px;top:323.53px;width:165.69px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> the Daytona area began</span><span class="text-span" style="left:434.48px;top:323.53px;width:21.88px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> to</span><span class="text-span" style="left:450.36px;top:323.53px;width:251.64px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> become a permanent settlement. The</span><span class="text-span" style="left:120.00px;top:340.38px;width:152.76px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">name &quot;Daytona&quot; came</span><span class="text-span" style="left:266.76px;top:340.38px;width:22.82px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> to</span><span class="text-span" style="left:283.58px;top:340.38px;width:187.94px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> be by honoring the founder</span><span class="text-span" style="left:465.52px;top:340.38px;width:22.82px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:482.34px;top:340.38px;width:107.29px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> the settlement,</span><span class="text-span" style="left:583.63px;top:340.38px;width:31.76px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> Mr.</span><span class="text-span" style="left:609.39px;top:340.38px;width:92.60px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> Mathias Day</span><span class="text-span" style="left:120.00px;top:357.25px;width:124.20px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">of Mansfield, Ohio</span><span class="text-span" style="left:238.21px;top:357.25px;width:10.07px;min-height:17.59px;font-family:Arial, Helvetica, sans-serif;font-size:14.66px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">.</span><span class="text-span" style="left:120.00px;top:392.78px;width:17.41px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">O</span><span class="text-span" style="left:131.41px;top:392.78px;width:71.48px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">n the 26th</span><span class="text-span" style="left:196.89px;top:392.78px;width:22.43px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:213.32px;top:392.78px;width:113.29px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> July in 1876 the</span><span class="text-span" style="left:320.61px;top:392.78px;width:33.82px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> first</span><span class="text-span" style="left:348.43px;top:392.78px;width:97.54px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> town meeting</span><span class="text-span" style="left:439.97px;top:392.78px;width:22.44px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:456.41px;top:392.78px;width:140.06px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> Daytona took place.</span><span class="text-span" style="left:590.47px;top:392.78px;width:24.06px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> At</span><span class="text-span" style="left:608.53px;top:392.78px;width:93.46px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> this meeting,</span><span class="text-span" style="left:120.00px;top:409.65px;width:394.00px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">the town was &quot;officially&quot; named and incorporated and held its</span><span class="text-span" style="left:508.00px;top:409.65px;width:32.99px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> first</span><span class="text-span" style="left:534.99px;top:409.65px;width:167.01px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> election naming a Mayor</span><span class="text-span" style="left:120.00px;top:426.51px;width:99.71px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">(Rev. Dr. L. D.</span><span class="text-span" style="left:213.72px;top:426.51px;width:416.81px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> Houston), a Common Council of seven, a Clerk and a Marshall</span><span class="text-span" style="left:624.57px;top:426.52px;width:10.07px;min-height:17.59px;font-family:Arial, Helvetica, sans-serif;font-size:14.66px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">.</span><span class="text-span" style="left:120.00px;top:462.05px;width:15.78px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">S</span><span class="text-span" style="left:129.79px;top:462.05px;width:287.62px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">ettlements were also being established near</span><span class="text-span" style="left:411.40px;top:462.05px;width:21.40px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> at</span><span class="text-span" style="left:426.81px;top:462.05px;width:275.19px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> hand during this same period. There were</span><span class="text-span" style="left:120.00px;top:478.91px;width:582.00px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">two colonies across the Halifax River from Daytona, one known as Seabreeze and one by</span><span class="text-span" style="left:120.00px;top:495.78px;width:68.62px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">the name</span><span class="text-span" style="left:182.62px;top:495.78px;width:23.79px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> of</span><span class="text-span" style="left:200.40px;top:495.78px;width:501.59px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);"> Daytona Beach. These three towns eventually joined forces and voted on</span><span class="text-span" style="left:120.00px;top:512.65px;width:457.66px;min-height:17.60px;font-family:Arial, Helvetica, sans-serif;font-size:14.67px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">January 4, 1926 to incorporate into one city known as Daytona Beach</span><span class="text-span" style="left:571.69px;top:512.65px;width:10.07px;min-height:17.59px;font-family:Arial, Helvetica, sans-serif;font-size:14.66px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">.</span><span class="text-span" style="left:289.76px;top:548.96px;width:243.02px;min-height:22.40px;font-family:Arial, Helvetica, sans-serif;font-size:18.67px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">The City of Daytona Beach</span><span class="text-span" style="left:348.43px;top:588.57px;width:125.14px;min-height:19.20px;font-family:Arial, Helvetica, sans-serif;font-size:16.00px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">Street Address:</span><span class="text-span" style="left:299.92px;top:606.97px;width:222.13px;min-height:19.20px;font-family:Arial, Helvetica, sans-serif;font-size:16.00px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">301 South Ridgewood Avenue</span><span class="text-span" style="left:343.55px;top:644.04px;width:134.91px;min-height:19.20px;font-family:Arial, Helvetica, sans-serif;font-size:16.00px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">Mailing Address:</span><span class="text-span" style="left:332.85px;top:662.44px;width:156.30px;min-height:19.20px;font-family:Arial, Helvetica, sans-serif;font-size:16.00px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">Post Office Box 2451</span><span class="text-span" style="left:279.47px;top:680.84px;width:263.03px;min-height:19.20px;font-family:Arial, Helvetica, sans-serif;font-size:16.00px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">Daytona Beach, Florida 32115-2451</span><span class="text-span" style="left:312.44px;top:717.91px;width:197.13px;min-height:19.20px;font-family:Arial, Helvetica, sans-serif;font-size:16.00px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">Main Telephone Number:</span><span class="text-span" style="left:353.29px;top:736.31px;width:115.39px;min-height:19.20px;font-family:Arial, Helvetica, sans-serif;font-size:16.00px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">(386) 671-8000</span><span class="text-span" style="left:337.32px;top:773.38px;width:98.43px;min-height:19.20px;font-family:Arial, Helvetica, sans-serif;font-size:16.00px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">Population: </span><span class="text-span" style="left:429.74px;top:773.37px;width:54.93px;min-height:19.20px;font-family:Arial, Helvetica, sans-serif;font-size:16.00px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">72,647</span><span class="text-span" style="left:264.37px;top:791.77px;width:293.26px;min-height:19.20px;font-family:Arial, Helvetica, sans-serif;font-size:16.00px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">(per U.S. Census Bureau, Census 2020)</span><span class="text-span" style="left:327.55px;top:828.84px;width:166.89px;min-height:19.20px;font-family:Arial, Helvetica, sans-serif;font-size:16.00px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">Form of government:</span><span class="text-span" style="left:232.39px;top:847.24px;width:357.17px;min-height:19.20px;font-family:Arial, Helvetica, sans-serif;font-size:16.00px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">Council-Manager (Mayor and six Commissioners)</span></div>
+        <div class="page-outline" aria-hidden="true"></div>
+      </section>
+    </article>
+    </div>
+          </div>
+        </section>
+        <aside class="tools" id="tools-panel" aria-label="Accessibility tools">
+          <div class="tools__head">Accessibility</div>
+          <div class="tools__body">
+            <div class="tool-row">
+              <button class="ui-btn" id="toggle-contrast" type="button" aria-pressed="false">High Contrast</button>
+              <button class="ui-btn" id="toggle-readable" type="button" aria-pressed="false">Readable Font</button>
+            </div>
+            <p>This HTML view exposes each page as a labeled region, keeps a plain-text transcript for every page when text can be extracted, and falls back to a high-resolution preview when visual fidelity is safer than positioned text.</p>
+            <ul>
+              <li>Semantic HTML pages: 2</li>
+              <li>Hybrid preview pages: 0</li>
+              <li>Image fallback pages: 0</li>
+              <li>Overlap-risk pages corrected: 0</li>
+            </ul>
+            <div class="status-chip"><strong>Status</strong> <span id="viewer-status" aria-live="polite">HTML page 1, 100% zoom</span></div>
+          </div>
+          <div class="tools__head hidden" id="transcript-panel">Transcript</div>
+          <div class="transcript-list hidden" id="transcript-list" role="region" aria-label="Page transcripts"><details open><summary id="page-1-transcript-summary">Page 1 transcript</summary><pre aria-labelledby="page-1-transcript-summary">Citizen Board Handbook
+Introduction
+Attheheart oflocal government isHome Rule, which calls forlocal self-government by
+thecitizens. This means that, ideally, local public policy and resulting decisions isa
+product oftheinput ofallthecitizens ofthecommunity, i.e.,truedemocracy. Aquality city
+government, andthus thequality oflifeinthecommunity, canonly beobtained through
+having knowledgeable citizens who actively participate in their local government.
+Ifacitizen wishes toparticipa tedirectly incitygovernment, onemeans istoserve ona
+local government commission, board oradvisory committee. Inthecase ofcities, the
+charter generally states thelocal government ’spower tocreate commissions, boards and
+advisory committees when such needs arise, and includes thepowers, duties and
+composition ofany such permanent bodies. Temporary bodies may becreated and
+abolished by resolution or administrative order.
+Commissions andboards sometimes areassigned significant powers ofpolicy -making
+and/or administration. Advisory committees serve animportant function inproviding
+expertise incertain areas ofcityorcounty concern. Usually established attherequest of
+theCommission, they may bemade upofboth citizens andCommission memb ersand
+may deal with issues andproblems which aredeemed worthy ofspecial consideration
+andadvisement. Committees addanother degree oflocal government responsiveness to
+thepublic interest. They provide anexcellent opportunity forcitizens toactive lyparticipate
+intheoperation oftheir local government. Advisory committees arenotofthesame
+significance ascommissions orboards, lacking thepower tomake oradminister policy on
+their own. Instead, advisory committees take upmatters thatdeserve theextra attention
+and consideration that only a group of interested, concerned citizens can render.
+The City ofDaytona Beach has aCommission -Manager form ofgovernment. The
+Commission (consisting of7members, Mayor and 6City Commissioners) has and
+exercises power and control viadecision making, establishing policy fortheCity
+(legislative function), while theCityManager hastheresponsibility forensuring thatthose
+decisions and policies are carried out (executive function).
+TheCityofDayton aBeach hasatotal of25boards withtwoofthatnumber consisting of
+membership from theCityCommission. There are23citizen participation boards totaling
+approximately 200members. Thenumber ofboard members vary perboard. Most ofthe
+boards meet monthly. Some oftheboards arecreated byCity Charter, others via
+ordinances andresolutions approved bytheCityCommission. Most boards require thata
+member bearesident of(orhave abusiness in)The City ofDaytona Beach andbea
+registered voter (qualified elector). Most boards also require theboard member complete
+andprovide totheSupervisor ofElections annually, aForm 1-Financial Disclosure form.
+Allboard meetings oftheCityarecovered under thePublic Records Law, Chapter 119
+and theGovernment-in-the-Sunshine Law. Most oftheboards serve inanadvisory
+capacity. All,asaresult ofthecitizen involvement andparticipation, provide much needed
+assistance inassuring thatactions taken bytheCityarenotonly inthebest interest ofthe
+City but also have the support and input of its citizens.</pre></details><details><summary id="page-2-transcript-summary">Page 2 transcript</summary><pre aria-labelledby="page-2-transcript-summary">The City ofDaytona Beach ispleased toprovide the&quot;City Commission Citizen Board
+Handbook&quot; asour way ofincreasing citizen knowledge and awareness oflocal
+Government. Ifyouorsomeone youknow isinterested inbecoming aBoard Member
+Candidate, please fill out and return the Board Application Form .
+We thank you for your interest in providing service t o The City of Daytona Beach.
+History
+Incorporated 1876. Theregion inandaround what iscurrently known asDaytona Beach
+wasoriginally inhabited bytheTimucuan Indians. TheSpanish Crown laidclaim toFlorida
+inearly 1500s and later awarded Royal Land Grants totheBritish. Itwas from the
+purchase ofthese grants bynorthern Americans inthemid1800s, after theSeminole
+Indian Warof1835, thattheDaytona area began tobecome apermanent settlement. The
+name &quot;Daytona&quot; came tobebyhonoring thefound erofthesettlement, Mr.Mathias Day
+of Mansfield, Ohio .
+Onthe26th ofJulyin1876 thefirsttown meeting ofDaytona took place. Atthismeeting,
+thetown was&quot;officially&quot; named andincorporated andheld itsfirstelection naming aMayor
+(Rev. Dr. L. D. Houston), a Common Council of seven, a Clerk and a Marshall .
+Settlements were alsobeing established near athand during thissame period. There were
+twocolonies across theHalifax River from Daytona, oneknown asSeabreeze andoneby
+thename ofDaytona Beach. These three towns eventually joined forces andvoted on
+January 4, 1926 to incorporate into one city known as Daytona Beach .
+The City of Daytona Beach
+Street Address:
+301 South Ridgewood Avenue
+Mailing Address:
+Post Office Box 2451
+Daytona Beach, F lorida 32115-2451
+Main Telephone Number:
+(386) 671-8000
+Population: 72,647
+(per U.S. Census Bureau, Census 20 20)
+Form of government:
+Council-Manager (Mayor and six Commissioners)</pre></details></div>
+        </aside>
+      </div>
+    </div>
+  </main>
+  <button class="back-top" id="back-to-top" type="button" aria-controls="viewer-main" aria-label="Return to top">Top</button>
+  <script>
+(function(){
+  const viewer = document.querySelector('.viewer');
+  const pageInput = document.getElementById('page-input');
+  const pageTotal = Number(document.body.dataset.totalPages || '1');
+  const prevBtn = document.getElementById('prev-page');
+  const nextBtn = document.getElementById('next-page');
+  const zoomIn = document.getElementById('zoom-in');
+  const zoomOut = document.getElementById('zoom-out');
+  const fitWidth = document.getElementById('fit-width');
+  const fitPage = document.getElementById('fit-page');
+  const actualSize = document.getElementById('actual-size');
+  const zoomSelect = document.getElementById('zoom-select');
+  const zoomLabel = document.getElementById('zoom-label');
+  const pageStack = document.getElementById('page-stack');
+  const viewerMain = document.getElementById('viewer-main');
+  const pagesToggle = document.getElementById('toggle-pages');
+  const toolsToggle = document.getElementById('toggle-tools');
+  const toolsPanel = document.getElementById('tools-panel');
+  const transcriptToggle = document.getElementById('toggle-transcript');
+  const transcriptPanel = document.getElementById('transcript-panel');
+  const transcriptList = document.getElementById('transcript-list');
+  const contrastToggle = document.getElementById('toggle-contrast');
+  const readableToggle = document.getElementById('toggle-readable');
+  const resetBtn = document.getElementById('reset-view');
+  const viewerStatus = document.getElementById('viewer-status');
+  const backTop = document.getElementById('back-to-top');
+  const thumbs = Array.from(document.querySelectorAll('.thumb-link'));
+  let currentPage = 1;
+  let zoom = 1;
+
+  function clampPage(n){ return Math.max(1, Math.min(pageTotal, n || 1)); }
+  function setExpanded(button, expanded){
+    if (!button) return;
+    button.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    button.setAttribute('aria-pressed', expanded ? 'true' : 'false');
+  }
+  function setPressed(button, pressed){
+    if (!button) return;
+    button.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+  }
+  function syncPanelButtons(){
+    if (!viewer) return;
+    setExpanded(pagesToggle, !viewer.classList.contains('sidebar-collapsed'));
+    setExpanded(toolsToggle, !viewer.classList.contains('tools-collapsed'));
+    const transcriptOpen = transcriptPanel && !transcriptPanel.classList.contains('hidden');
+    setExpanded(transcriptToggle, Boolean(transcriptOpen));
+  }
+  function syncPreferenceButtons(){
+    setPressed(contrastToggle, document.body.classList.contains('high-contrast'));
+    setPressed(readableToggle, document.body.classList.contains('readable-font'));
+  }
+  function updateStatus(){
+    if (!viewerStatus) return;
+    viewerStatus.textContent = 'HTML page ' + currentPage + ', ' + Math.round(zoom * 100) + '% zoom';
+  }
+  function updateZoomUi(){
+    if (zoomLabel) zoomLabel.textContent = Math.round(zoom * 100) + '%';
+    if (zoomSelect) zoomSelect.value = String(Math.round(zoom * 100));
+  }
+  function syncButtons(){
+    thumbs.forEach(link => link.classList.toggle('active', Number(link.dataset.page) === currentPage));
+    updateStatus();
+  }
+  function scrollToPage(page){
+    currentPage = clampPage(page);
+    pageInput.value = String(currentPage);
+    const el = document.getElementById('page-' + currentPage);
+    if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    syncButtons();
+  }
+  function scrollToTop(){
+    currentPage = 1;
+    pageInput.value = '1';
+    if (viewerMain) {
+      viewerMain.scrollTo({top: 0, behavior: 'smooth'});
+    }
+    window.scrollTo({top: 0, behavior: 'smooth'});
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    syncButtons();
+  }
+  function applyZoom(){
+    if (!pageStack) return;
+    pageStack.style.zoom = String(zoom);
+    updateZoomUi();
+    updateStatus();
+  }
+  function fitToWidth(){
+    const page = document.querySelector('.pdf-page');
+    if (!page) return;
+    const width = page.getBoundingClientRect().width / zoom;
+    const target = Math.max(0.5, Math.min(2.25, (viewerMain.clientWidth - 48) / width));
+    zoom = target;
+    applyZoom();
+  }
+  function fitToPage(){
+    const page = document.querySelector('.pdf-page');
+    if (!page) return;
+    const width = page.getBoundingClientRect().width / zoom;
+    const height = page.getBoundingClientRect().height / zoom;
+    const widthZoom = (viewerMain.clientWidth - 48) / width;
+    const heightZoom = (viewerMain.clientHeight - 72) / height;
+    zoom = Math.max(0.5, Math.min(2.25, Math.min(widthZoom, heightZoom)));
+    applyZoom();
+  }
+  prevBtn.addEventListener('click', () => scrollToPage(currentPage - 1));
+  nextBtn.addEventListener('click', () => scrollToPage(currentPage + 1));
+  pageInput.addEventListener('change', () => scrollToPage(Number(pageInput.value)));
+  zoomIn.addEventListener('click', () => { zoom = Math.min(2.25, zoom + 0.1); applyZoom(); });
+  zoomOut.addEventListener('click', () => { zoom = Math.max(0.5, zoom - 0.1); applyZoom(); });
+  fitWidth.addEventListener('click', fitToWidth);
+  if (fitPage) fitPage.addEventListener('click', fitToPage);
+  if (actualSize) actualSize.addEventListener('click', () => { zoom = 1; applyZoom(); });
+  if (zoomSelect) zoomSelect.addEventListener('change', () => {
+    const nextZoom = Number(zoomSelect.value) / 100;
+    if (!Number.isFinite(nextZoom)) return;
+    zoom = Math.max(0.5, Math.min(2.25, nextZoom));
+    applyZoom();
+  });
+  if (pagesToggle) pagesToggle.addEventListener('click', () => {
+    viewer.classList.toggle('sidebar-collapsed');
+    syncPanelButtons();
+  });
+  toolsToggle.addEventListener('click', () => {
+    viewer.classList.toggle('tools-collapsed');
+    syncPanelButtons();
+  });
+  transcriptToggle.addEventListener('click', () => {
+    transcriptPanel.classList.toggle('hidden');
+    transcriptList.classList.toggle('hidden');
+    syncPanelButtons();
+  });
+  contrastToggle.addEventListener('click', () => {
+    document.body.classList.toggle('high-contrast');
+    syncPreferenceButtons();
+  });
+  readableToggle.addEventListener('click', () => {
+    document.body.classList.toggle('readable-font');
+    syncPreferenceButtons();
+  });
+  resetBtn.addEventListener('click', () => {
+    zoom = 1;
+    applyZoom();
+    document.body.classList.remove('high-contrast','readable-font');
+    transcriptPanel.classList.add('hidden');
+    transcriptList.classList.add('hidden');
+    viewer.classList.remove('sidebar-collapsed','tools-collapsed');
+    syncPreferenceButtons();
+    syncPanelButtons();
+    scrollToTop();
+  });
+  if (backTop) backTop.addEventListener('click', scrollToTop);
+  thumbs.forEach(link => link.addEventListener('click', (ev) => { ev.preventDefault(); scrollToPage(Number(link.dataset.page)); }));
+  const observer = new IntersectionObserver((entries) => {
+    const visible = entries.filter(entry => entry.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
+    if (!visible) return;
+    currentPage = clampPage(Number(visible.target.dataset.page));
+    pageInput.value = String(currentPage);
+    syncButtons();
+  }, {root: viewerMain, threshold: [0.55, 0.8]});
+  document.querySelectorAll('.page-card').forEach(card => observer.observe(card));
+  pageInput.value = '1';
+  syncPanelButtons();
+  syncPreferenceButtons();
+  syncButtons();
+  fitToPage();
+  window.addEventListener('resize', fitToPage);
+})();
+</script>
+</body>
+</html>

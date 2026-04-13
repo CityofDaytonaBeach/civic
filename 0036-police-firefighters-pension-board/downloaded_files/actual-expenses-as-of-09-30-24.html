@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Actual Expenses As Of 09 30 24 - HTML PDF Replica</title>
+  <style>
+html,body{margin:0;padding:0;background:#fff;color:#111827;font:16px/1.5 "Segoe UI",Tahoma,Arial,sans-serif}
+body{min-height:100vh}
+body.high-contrast{background:#000;color:#fff}
+body.readable-font{font-family:Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}a:hover{text-decoration:underline}
+button,input{font:inherit}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.hidden{display:none!important}
+.skip-link{position:absolute;left:12px;top:12px;transform:translateY(-180%);background:#fff;color:#111827;padding:10px 14px;border-radius:10px;z-index:1000}
+.skip-link:focus{transform:translateY(0)}
+.pdf-shell{width:100%;max-width:none;margin:0;padding:0}
+.viewer{background:#fff;border:0;border-radius:0;box-shadow:none;overflow:hidden;min-height:100vh}
+.viewer.sidebar-collapsed .viewer-body{grid-template-columns:minmax(0,1fr) 300px}
+.viewer.sidebar-collapsed .sidebar{display:none}
+.viewer.tools-collapsed .viewer-body{grid-template-columns:220px minmax(0,1fr)}
+.viewer.tools-collapsed .tools{display:none}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 14px;background:#2b2f35;border-bottom:1px solid #1c1f24}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand__badge{width:28px;height:28px;border-radius:8px;background:#e53935;color:#fff;display:grid;place-items:center;font-weight:800}
+.brand__title{font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#f9fafb}
+.brand__sub{font-size:12px;color:#aeb8c4}
+.top-actions,.toolbar-actions,.mode-toggle,.page-nav,.zoom-controls,.tool-group{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.topbar,.toolbar,.sidebar,.tools,.sidebar__head,.tools__head,.thumb-link,.transcript-list summary,.transcript-list pre,.tools__body,.tools__body p,.tools__body li,.tools__body label{color:#f3f4f6}
+.ui-btn,.ui-link,.page-input,.zoom-select{display:inline-flex;align-items:center;justify-content:center;min-height:34px;padding:0 12px;border-radius:9px;border:1px solid #4a5058;background:#3b4149;color:#f3f4f6}
+.ui-btn[aria-pressed="true"],.ui-btn.active{background:#4b5563;border-color:#6b7280;color:#fff}
+.ui-btn:hover,.ui-link:hover{background:#4a5058;text-decoration:none}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 14px;background:#3a3f46;border-bottom:1px solid #2a2e34}
+.page-input,.zoom-select{width:72px;padding:0 8px;text-align:center}
+.viewer-body{display:grid;grid-template-columns:220px minmax(0,1fr) 300px;min-height:calc(100vh - 150px);background:#fff}
+.sidebar,.tools{background:#3a3f46;border-right:1px solid #2a2e34;overflow:auto}
+.tools{border-right:0;border-left:1px solid #2a2e34}
+.sidebar__head,.tools__head{padding:14px 16px;border-bottom:1px solid #2a2e34;font-weight:700}
+.thumb-list,.tools__body,.transcript-list{padding:14px;display:grid;gap:12px}
+.thumb-link{display:grid;gap:6px;padding:10px;border-radius:12px;border:1px solid #4a5058;background:#444a53;color:#e5e7eb}
+.thumb-link.active{outline:2px solid #d1d5db}
+.thumb-link span{font-size:12px;color:#b9c2cf}
+.viewer-main{overflow:auto;background:#fff}
+.mode-panels{position:relative;height:100%}
+.mode-panel{height:100%}
+.viewer-stage{padding:22px 24px 32px;background:#fff}
+.page-stack{display:grid;gap:26px;justify-content:stretch;transform-origin:top center}
+.page-card{width:100%;display:grid;justify-items:center}
+.page-label{font-size:13px;color:#374151;margin:0 0 8px;justify-self:start;width:min(100%,816px)}
+.pdf-page{position:relative;background:#fff;box-shadow:0 12px 28px rgba(0,0,0,.18);overflow:hidden}
+.pdf-page:focus-visible{outline:3px solid #111827;outline-offset:3px}
+.pdf-page img,.pdf-page svg{position:absolute;display:block}
+.vector-layer,.image-layer,.text-layer{position:absolute;inset:0}
+.text-layer{z-index:3}
+.text-layer--assistive{opacity:.015}
+.text-span{position:absolute;display:block;white-space:pre;transform-origin:top left;color:#111;line-height:1;overflow:visible;text-rendering:geometricPrecision;box-sizing:border-box;padding:0 6px 2px 0}
+.page-fallback{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.page-outline{position:absolute;inset:0;border:1px solid rgba(0,0,0,.08);pointer-events:none}
+.pdf-frame{width:100%;height:calc(100vh - 170px);border:0;background:#fff}
+.tools .ui-btn{justify-content:flex-start}
+.tools__body .tool-row{display:grid;gap:8px}
+.tools__body ul{margin:0;padding-left:18px}
+.transcript-list details{background:#444a53;border:1px solid #555c66;border-radius:12px;padding:10px 12px}
+.transcript-list summary{cursor:pointer;font-weight:700}
+.transcript-list pre{white-space:pre-wrap;word-break:break-word;font:13px/1.45 Consolas,"Courier New",monospace}
+.back-top{position:fixed;right:18px;bottom:18px;z-index:40;border:1px solid #4a5058;background:#2b2f35;color:#fff;border-radius:999px;padding:10px 14px;box-shadow:0 12px 28px rgba(0,0,0,.22)}
+.back-top:hover{background:#3b4149}
+body.high-contrast .viewer{background:#111;border-color:#000}
+body.high-contrast .topbar,body.high-contrast .toolbar,body.high-contrast .sidebar,body.high-contrast .tools{background:#111;color:#fff}
+body.high-contrast .ui-btn,body.high-contrast .ui-link,body.high-contrast .page-input,body.high-contrast .zoom-select,body.high-contrast .thumb-link,body.high-contrast .back-top{background:#000;border-color:#fff;color:#fff}
+body.high-contrast .pdf-page{box-shadow:0 0 0 2px #fff}
+@media(max-width:1180px){.viewer-body{grid-template-columns:180px minmax(0,1fr)}.tools{display:none}}
+@media(max-width:860px){.viewer-body,.viewer.sidebar-collapsed .viewer-body,.viewer.tools-collapsed .viewer-body{grid-template-columns:1fr}.sidebar,.tools{display:none}.toolbar{align-items:flex-start;flex-direction:column}.topbar{align-items:flex-start;flex-direction:column}.pdf-frame{height:70vh}}
+</style>
+</head>
+<body data-total-pages="1">
+  <a class="skip-link" href="#viewer-main">Skip to PDF content</a>
+  <a class="skip-link" href="#tools-panel">Skip to accessibility tools</a>
+  <main class="pdf-shell" id="pdf-main" role="main" aria-label="Accessible HTML version of Actual Expenses As Of 09 30 24">
+    <div class="viewer">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand__badge" aria-hidden="true">A</div>
+          <div>
+            <div class="brand__title">Actual Expenses As Of 09 30 24</div>
+            <div class="brand__sub">actual-expenses-as-of-09-30-24.pdf - 1 page</div>
+          </div>
+        </div>
+      </header>
+        <section class="toolbar" aria-label="Document controls">
+        <div class="toolbar-actions">
+          <div class="tool-group" role="group" aria-label="Panel controls">
+            <button class="ui-btn" id="toggle-pages" type="button" aria-controls="pages-panel" aria-expanded="true" aria-pressed="true">Pages</button>
+            <button class="ui-btn" id="toggle-tools" type="button" aria-controls="tools-panel" aria-expanded="true" aria-pressed="true">Accessibility</button>
+            <button class="ui-btn" id="toggle-transcript" type="button" aria-controls="transcript-list transcript-panel" aria-expanded="false" aria-pressed="false">Transcript</button>
+          </div>
+          <div class="page-nav" role="group" aria-label="Page navigation">
+            <button class="ui-btn" id="prev-page" type="button">Previous</button>
+            <label class="sr-only" for="page-input">Current page</label>
+            <input class="page-input" id="page-input" type="number" min="1" max="1" inputmode="numeric">
+            <span>of 1</span>
+            <button class="ui-btn" id="next-page" type="button">Next</button>
+          </div>
+          <div class="zoom-controls" role="group" aria-label="Zoom controls">
+            <button class="ui-btn" id="zoom-out" type="button">-</button>
+            <span id="zoom-label" aria-live="polite">100%</span>
+            <button class="ui-btn" id="zoom-in" type="button">+</button>
+            <label class="sr-only" for="zoom-select">Zoom percent</label>
+            <select class="zoom-select" id="zoom-select" aria-label="Zoom percent">
+              <option value="50">50%</option>
+              <option value="75">75%</option>
+              <option value="100" selected>100%</option>
+              <option value="125">125%</option>
+              <option value="150">150%</option>
+              <option value="200">200%</option>
+            </select>
+            <button class="ui-btn" id="actual-size" type="button">Actual Size</button>
+            <button class="ui-btn" id="fit-page" type="button">Fit Page</button>
+            <button class="ui-btn" id="fit-width" type="button">Fit Width</button>
+          </div>
+        </div>
+        <div class="tool-group" aria-label="Viewer tools">
+          <button class="ui-btn" id="reset-view" type="button">Reset</button>
+        </div>
+      </section>
+      <div class="viewer-body">
+        <aside class="sidebar" id="pages-panel" aria-label="Pages">
+          <div class="sidebar__head">Pages</div>
+          <nav class="thumb-list" aria-label="Page thumbnails"><a class="thumb-link active" href="#page-1" data-page="1" aria-label="Jump to page 1"><strong>Page 1</strong></a></nav>
+        </aside>
+        <section class="viewer-main" id="viewer-main" tabindex="-1" role="region" aria-label="PDF pages">
+          <div class="viewer-stage">
+            <div class="page-stack" id="page-stack" role="document" aria-label="Actual Expenses As Of 09 30 24 pages">
+    <article class="page-card" id="page-1" data-page="1">
+      <p class="page-label">Page 1 of 1</p>
+      <section class="pdf-page" role="region" tabindex="0" aria-roledescription="PDF page" aria-labelledby="page-1-title" aria-describedby="page-1-surface-note page-1-transcript" style="width:816.00px;height:1056.00px;">
+        <h2 class="sr-only" id="page-1-title">Page 1</h2>
+        <div class="sr-only" id="page-1-surface-note">Page 1 is rendered as structured HTML with selectable text, extracted images, and vector artwork.</div>
+        <div class="sr-only" id="page-1-transcript">Expenditure Type
+2023-2024
+Proposed Budget
+Amount
+Actual Expenses as of
+September 30, 2024
+Actuary
+$110,000.00
+$73,599.00
+Administrator
+$120,000.00
+$100,361.62
+Attorney
+$65,000.00
+$22,135.24
+IME Physician Fees
+$20,000.00
+$10,525.00
+Auditor
+$40,000.00
+$41,500.00
+Custodian of Funds
+$80,000.00
+$61,270.45
+Insurance
+$15,000.00
+$12,124.04
+School, Travel and Dues
+$52,000.00
+$12,589.61
+Investment Consultant
+$170,000.00
+$149,447.85
+Miscellaneous
+$25,000.00
+$0.00
+Totals
+$697,000.00
+$483,552.81
+City of Daytona Beach Police Officers&#x27; &amp; Firefighters&#x27; Retirement System</div>
+        <svg class="vector-layer" width="816.00" height="1056.00" viewBox="0 0 816.00 1056.00" aria-hidden="true" focusable="false"><path d="M 134.83 96.24 L 709.81 96.24" fill="none" fill-opacity="None" stroke="rgb(0, 0, 0)" stroke-opacity="1.0" stroke-width="0.19" stroke-linejoin="1" stroke-linecap="round" /><rect x="134.75" y="96.16" width="575.13" height="1.28" fill="rgb(0, 0, 0)" fill-opacity="1.0" stroke="none" stroke-opacity="None" stroke-width="1.33" rx="0" ry="0" /><path d="M 134.83 168.75 L 709.81 168.75" fill="none" fill-opacity="None" stroke="rgb(0, 0, 0)" stroke-opacity="1.0" stroke-width="0.19" stroke-linejoin="1" stroke-linecap="round" /><rect x="134.75" y="168.67" width="575.13" height="1.28" fill="rgb(0, 0, 0)" fill-opacity="1.0" stroke="none" stroke-opacity="None" stroke-width="1.33" rx="0" ry="0" /><path d="M 134.83 676.17 L 709.81 676.17" fill="none" fill-opacity="None" stroke="rgb(0, 0, 0)" stroke-opacity="1.0" stroke-width="0.19" stroke-linejoin="1" stroke-linecap="round" /><rect x="134.75" y="676.09" width="575.13" height="1.28" fill="rgb(0, 0, 0)" fill-opacity="1.0" stroke="none" stroke-opacity="None" stroke-width="1.33" rx="0" ry="0" /><path d="M 134.83 700.33 L 709.81 700.33" fill="none" fill-opacity="None" stroke="rgb(0, 0, 0)" stroke-opacity="1.0" stroke-width="0.19" stroke-linejoin="1" stroke-linecap="round" /><rect x="134.75" y="700.25" width="575.13" height="1.28" fill="rgb(0, 0, 0)" fill-opacity="1.0" stroke="none" stroke-opacity="None" stroke-width="1.33" rx="0" ry="0" /></svg>
+        <div class="image-layer"></div>
+        
+        <div class="text-layer"><span class="text-span" style="left:137.79px;top:146.71px;width:141.24px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">Expenditure Type</span><span class="text-span" style="left:427.29px;top:99.51px;width:92.81px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">2023-2024 </span><span class="text-span" style="left:379.91px;top:122.71px;width:140.18px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">Proposed Budget </span><span class="text-span" style="left:447.77px;top:145.91px;width:67.69px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">Amount</span><span class="text-span" style="left:540.73px;top:122.71px;width:177.45px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">Actual Expenses as of </span><span class="text-span" style="left:556.57px;top:145.91px;width:156.87px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">September 30, 2024</span><span class="text-span" style="left:137.79px;top:195.03px;width:66.89px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">Actuary</span><span class="text-span" style="left:414.31px;top:195.03px;width:100.53px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">$110,000.00</span><span class="text-span" style="left:621.89px;top:195.03px;width:91.11px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">$73,599.00</span><span class="text-span" style="left:137.79px;top:243.35px;width:111.66px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">Administrator</span><span class="text-span" style="left:414.31px;top:243.35px;width:100.53px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">$120,000.00</span><span class="text-span" style="left:612.45px;top:243.35px;width:100.53px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">$100,361.62</span><span class="text-span" style="left:137.79px;top:291.67px;width:73.27px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">Attorney</span><span class="text-span" style="left:423.75px;top:291.67px;width:91.11px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">$65,000.00</span><span class="text-span" style="left:621.89px;top:291.67px;width:91.11px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">$22,135.24</span><span class="text-span" style="left:137.79px;top:340.03px;width:157.30px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">IME Physician Fees</span><span class="text-span" style="left:423.75px;top:340.03px;width:91.11px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">$20,000.00</span><span class="text-span" style="left:621.89px;top:340.03px;width:91.11px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">$10,525.00</span><span class="text-span" style="left:137.79px;top:388.35px;width:65.00px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">Auditor</span><span class="text-span" style="left:423.75px;top:388.35px;width:91.11px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">$40,000.00</span><span class="text-span" style="left:621.89px;top:388.35px;width:91.11px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">$41,500.00</span><span class="text-span" style="left:137.79px;top:436.67px;width:153.78px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">Custodian of Funds</span><span class="text-span" style="left:423.75px;top:436.67px;width:91.11px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">$80,000.00</span><span class="text-span" style="left:621.89px;top:436.67px;width:91.11px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">$61,270.45</span><span class="text-span" style="left:137.79px;top:484.99px;width:79.58px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">Insurance</span><span class="text-span" style="left:423.75px;top:484.99px;width:91.11px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">$15,000.00</span><span class="text-span" style="left:621.89px;top:484.99px;width:91.11px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">$12,124.04</span><span class="text-span" style="left:137.79px;top:533.31px;width:191.90px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">School, Travel and Dues</span><span class="text-span" style="left:423.75px;top:533.31px;width:91.11px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">$52,000.00</span><span class="text-span" style="left:621.89px;top:533.31px;width:91.11px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">$12,589.61</span><span class="text-span" style="left:137.79px;top:581.65px;width:176.02px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">Investment Consultant</span><span class="text-span" style="left:414.31px;top:581.65px;width:100.53px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">$170,000.00</span><span class="text-span" style="left:612.45px;top:581.65px;width:100.53px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">$149,447.85</span><span class="text-span" style="left:137.79px;top:629.97px;width:115.15px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">Miscellaneous</span><span class="text-span" style="left:423.75px;top:629.97px;width:91.11px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">$25,000.00</span><span class="text-span" style="left:664.29px;top:629.97px;width:48.78px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">$0.00</span><span class="text-span" style="left:137.79px;top:678.29px;width:53.45px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">Totals</span><span class="text-span" style="left:414.31px;top:678.29px;width:100.53px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">$697,000.00</span><span class="text-span" style="left:612.45px;top:678.29px;width:100.53px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">$483,552.81</span><span class="text-span" style="left:152.99px;top:74.20px;width:561.84px;min-height:24.47px;font-family:'Times New Roman', Times, serif;font-size:18.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">City of Daytona Beach Police Officers&#x27; &amp; Firefighters&#x27; Retirement System</span></div>
+        <div class="page-outline" aria-hidden="true"></div>
+      </section>
+    </article>
+    </div>
+          </div>
+        </section>
+        <aside class="tools" id="tools-panel" aria-label="Accessibility tools">
+          <div class="tools__head">Accessibility</div>
+          <div class="tools__body">
+            <div class="tool-row">
+              <button class="ui-btn" id="toggle-contrast" type="button" aria-pressed="false">High Contrast</button>
+              <button class="ui-btn" id="toggle-readable" type="button" aria-pressed="false">Readable Font</button>
+            </div>
+            <p>This HTML view exposes each page as a labeled region, keeps a plain-text transcript for every page when text can be extracted, and falls back to a high-resolution preview when visual fidelity is safer than positioned text.</p>
+            <ul>
+              <li>Semantic HTML pages: 1</li>
+              <li>Hybrid preview pages: 0</li>
+              <li>Image fallback pages: 0</li>
+              <li>Overlap-risk pages corrected: 0</li>
+            </ul>
+            <div class="status-chip"><strong>Status</strong> <span id="viewer-status" aria-live="polite">HTML page 1, 100% zoom</span></div>
+          </div>
+          <div class="tools__head hidden" id="transcript-panel">Transcript</div>
+          <div class="transcript-list hidden" id="transcript-list" role="region" aria-label="Page transcripts"><details open><summary id="page-1-transcript-summary">Page 1 transcript</summary><pre aria-labelledby="page-1-transcript-summary">Expenditure Type
+2023-2024
+Proposed Budget
+Amount
+Actual Expenses as of
+September 30, 2024
+Actuary
+$110,000.00
+$73,599.00
+Administrator
+$120,000.00
+$100,361.62
+Attorney
+$65,000.00
+$22,135.24
+IME Physician Fees
+$20,000.00
+$10,525.00
+Auditor
+$40,000.00
+$41,500.00
+Custodian of Funds
+$80,000.00
+$61,270.45
+Insurance
+$15,000.00
+$12,124.04
+School, Travel and Dues
+$52,000.00
+$12,589.61
+Investment Consultant
+$170,000.00
+$149,447.85
+Miscellaneous
+$25,000.00
+$0.00
+Totals
+$697,000.00
+$483,552.81
+City of Daytona Beach Police Officers&#x27; &amp; Firefighters&#x27; Retirement System</pre></details></div>
+        </aside>
+      </div>
+    </div>
+  </main>
+  <button class="back-top" id="back-to-top" type="button" aria-controls="viewer-main" aria-label="Return to top">Top</button>
+  <script>
+(function(){
+  const viewer = document.querySelector('.viewer');
+  const pageInput = document.getElementById('page-input');
+  const pageTotal = Number(document.body.dataset.totalPages || '1');
+  const prevBtn = document.getElementById('prev-page');
+  const nextBtn = document.getElementById('next-page');
+  const zoomIn = document.getElementById('zoom-in');
+  const zoomOut = document.getElementById('zoom-out');
+  const fitWidth = document.getElementById('fit-width');
+  const fitPage = document.getElementById('fit-page');
+  const actualSize = document.getElementById('actual-size');
+  const zoomSelect = document.getElementById('zoom-select');
+  const zoomLabel = document.getElementById('zoom-label');
+  const pageStack = document.getElementById('page-stack');
+  const viewerMain = document.getElementById('viewer-main');
+  const pagesToggle = document.getElementById('toggle-pages');
+  const toolsToggle = document.getElementById('toggle-tools');
+  const toolsPanel = document.getElementById('tools-panel');
+  const transcriptToggle = document.getElementById('toggle-transcript');
+  const transcriptPanel = document.getElementById('transcript-panel');
+  const transcriptList = document.getElementById('transcript-list');
+  const contrastToggle = document.getElementById('toggle-contrast');
+  const readableToggle = document.getElementById('toggle-readable');
+  const resetBtn = document.getElementById('reset-view');
+  const viewerStatus = document.getElementById('viewer-status');
+  const backTop = document.getElementById('back-to-top');
+  const thumbs = Array.from(document.querySelectorAll('.thumb-link'));
+  let currentPage = 1;
+  let zoom = 1;
+
+  function clampPage(n){ return Math.max(1, Math.min(pageTotal, n || 1)); }
+  function setExpanded(button, expanded){
+    if (!button) return;
+    button.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    button.setAttribute('aria-pressed', expanded ? 'true' : 'false');
+  }
+  function setPressed(button, pressed){
+    if (!button) return;
+    button.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+  }
+  function syncPanelButtons(){
+    if (!viewer) return;
+    setExpanded(pagesToggle, !viewer.classList.contains('sidebar-collapsed'));
+    setExpanded(toolsToggle, !viewer.classList.contains('tools-collapsed'));
+    const transcriptOpen = transcriptPanel && !transcriptPanel.classList.contains('hidden');
+    setExpanded(transcriptToggle, Boolean(transcriptOpen));
+  }
+  function syncPreferenceButtons(){
+    setPressed(contrastToggle, document.body.classList.contains('high-contrast'));
+    setPressed(readableToggle, document.body.classList.contains('readable-font'));
+  }
+  function updateStatus(){
+    if (!viewerStatus) return;
+    viewerStatus.textContent = 'HTML page ' + currentPage + ', ' + Math.round(zoom * 100) + '% zoom';
+  }
+  function updateZoomUi(){
+    if (zoomLabel) zoomLabel.textContent = Math.round(zoom * 100) + '%';
+    if (zoomSelect) zoomSelect.value = String(Math.round(zoom * 100));
+  }
+  function syncButtons(){
+    thumbs.forEach(link => link.classList.toggle('active', Number(link.dataset.page) === currentPage));
+    updateStatus();
+  }
+  function scrollToPage(page){
+    currentPage = clampPage(page);
+    pageInput.value = String(currentPage);
+    const el = document.getElementById('page-' + currentPage);
+    if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    syncButtons();
+  }
+  function scrollToTop(){
+    currentPage = 1;
+    pageInput.value = '1';
+    if (viewerMain) {
+      viewerMain.scrollTo({top: 0, behavior: 'smooth'});
+    }
+    window.scrollTo({top: 0, behavior: 'smooth'});
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    syncButtons();
+  }
+  function applyZoom(){
+    if (!pageStack) return;
+    pageStack.style.zoom = String(zoom);
+    updateZoomUi();
+    updateStatus();
+  }
+  function fitToWidth(){
+    const page = document.querySelector('.pdf-page');
+    if (!page) return;
+    const width = page.getBoundingClientRect().width / zoom;
+    const target = Math.max(0.5, Math.min(2.25, (viewerMain.clientWidth - 48) / width));
+    zoom = target;
+    applyZoom();
+  }
+  function fitToPage(){
+    const page = document.querySelector('.pdf-page');
+    if (!page) return;
+    const width = page.getBoundingClientRect().width / zoom;
+    const height = page.getBoundingClientRect().height / zoom;
+    const widthZoom = (viewerMain.clientWidth - 48) / width;
+    const heightZoom = (viewerMain.clientHeight - 72) / height;
+    zoom = Math.max(0.5, Math.min(2.25, Math.min(widthZoom, heightZoom)));
+    applyZoom();
+  }
+  prevBtn.addEventListener('click', () => scrollToPage(currentPage - 1));
+  nextBtn.addEventListener('click', () => scrollToPage(currentPage + 1));
+  pageInput.addEventListener('change', () => scrollToPage(Number(pageInput.value)));
+  zoomIn.addEventListener('click', () => { zoom = Math.min(2.25, zoom + 0.1); applyZoom(); });
+  zoomOut.addEventListener('click', () => { zoom = Math.max(0.5, zoom - 0.1); applyZoom(); });
+  fitWidth.addEventListener('click', fitToWidth);
+  if (fitPage) fitPage.addEventListener('click', fitToPage);
+  if (actualSize) actualSize.addEventListener('click', () => { zoom = 1; applyZoom(); });
+  if (zoomSelect) zoomSelect.addEventListener('change', () => {
+    const nextZoom = Number(zoomSelect.value) / 100;
+    if (!Number.isFinite(nextZoom)) return;
+    zoom = Math.max(0.5, Math.min(2.25, nextZoom));
+    applyZoom();
+  });
+  if (pagesToggle) pagesToggle.addEventListener('click', () => {
+    viewer.classList.toggle('sidebar-collapsed');
+    syncPanelButtons();
+  });
+  toolsToggle.addEventListener('click', () => {
+    viewer.classList.toggle('tools-collapsed');
+    syncPanelButtons();
+  });
+  transcriptToggle.addEventListener('click', () => {
+    transcriptPanel.classList.toggle('hidden');
+    transcriptList.classList.toggle('hidden');
+    syncPanelButtons();
+  });
+  contrastToggle.addEventListener('click', () => {
+    document.body.classList.toggle('high-contrast');
+    syncPreferenceButtons();
+  });
+  readableToggle.addEventListener('click', () => {
+    document.body.classList.toggle('readable-font');
+    syncPreferenceButtons();
+  });
+  resetBtn.addEventListener('click', () => {
+    zoom = 1;
+    applyZoom();
+    document.body.classList.remove('high-contrast','readable-font');
+    transcriptPanel.classList.add('hidden');
+    transcriptList.classList.add('hidden');
+    viewer.classList.remove('sidebar-collapsed','tools-collapsed');
+    syncPreferenceButtons();
+    syncPanelButtons();
+    scrollToTop();
+  });
+  if (backTop) backTop.addEventListener('click', scrollToTop);
+  thumbs.forEach(link => link.addEventListener('click', (ev) => { ev.preventDefault(); scrollToPage(Number(link.dataset.page)); }));
+  const observer = new IntersectionObserver((entries) => {
+    const visible = entries.filter(entry => entry.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
+    if (!visible) return;
+    currentPage = clampPage(Number(visible.target.dataset.page));
+    pageInput.value = String(currentPage);
+    syncButtons();
+  }, {root: viewerMain, threshold: [0.55, 0.8]});
+  document.querySelectorAll('.page-card').forEach(card => observer.observe(card));
+  pageInput.value = '1';
+  syncPanelButtons();
+  syncPreferenceButtons();
+  syncButtons();
+  fitToPage();
+  window.addEventListener('resize', fitToPage);
+})();
+</script>
+</body>
+</html>
