@@ -1,0 +1,52 @@
+{
+  "requested_url": "https://www.daytonabeach.gov/392/Code-of-Ordinances",
+  "final_url": "https://library.municode.com/FL/Daytona_Beach",
+  "page_title": "Daytona Beach, FL | Municode Library",
+  "captured_at_utc": "2026-04-09T19:44:09.126879+00:00",
+  "navigation_mode": "networkidle",
+  "navigation_error": null,
+  "evaluation_error": null,
+  "count": 4,
+  "images": [
+    {
+      "index": 0,
+      "src": "https://library.municode.com/dist/img/cp-municode-codification-logo-simple.svg",
+      "alt": "CivicPlus Municode Codification logo - simple",
+      "title": "",
+      "width": 161,
+      "height": 15,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 1,
+      "src": "https://www.gstatic.com/images/branding/googlelogo/1x/googlelogo_color_42x16dp.png",
+      "alt": "Google Translate",
+      "title": "",
+      "width": 42,
+      "height": 16,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 2,
+      "src": "https://library.municode.com/dist/img/muniball-36.png",
+      "alt": "CivicPlus logo",
+      "title": "",
+      "width": 1697,
+      "height": 1697,
+      "visible": false,
+      "loading": ""
+    },
+    {
+      "index": 3,
+      "src": "https://library.municode.com/dist/img/cp-municode-codification-logo-simple.svg",
+      "alt": "CivicPlus Municode Codification logo - simple",
+      "title": "",
+      "width": 161,
+      "height": 15,
+      "visible": false,
+      "loading": ""
+    }
+  ]
+}

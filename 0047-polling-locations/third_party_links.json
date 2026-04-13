@@ -1,0 +1,34 @@
+{
+  "requested_url": "https://www.daytonabeach.gov/582/Polling-Locations",
+  "final_url": "https://www.voterfocus.com/PrecinctFinder/addressSearch?county=VOL",
+  "page_title": "Precinct Finder",
+  "captured_at_utc": "2026-04-09T19:44:16.945406+00:00",
+  "navigation_mode": "networkidle",
+  "navigation_error": null,
+  "evaluation_error": null,
+  "count": 2,
+  "third_party_links": [
+    {
+      "index": 0,
+      "href": "https://translate.google.com/",
+      "rawHref": "https://translate.google.com",
+      "host": "translate.google.com",
+      "text": "Translate",
+      "ariaLabel": "",
+      "target": "_blank",
+      "rel": "",
+      "visible": true
+    },
+    {
+      "index": 1,
+      "href": "https://www.voterfocus.com/PrecinctFinder/precinctDirectory?county=FL-VOL",
+      "rawHref": "precinctDirectory?county=FL-VOL",
+      "host": "www.voterfocus.com",
+      "text": "All Precincts in Volusia County",
+      "ariaLabel": "",
+      "target": "",
+      "rel": "",
+      "visible": true
+    }
+  ]
+}

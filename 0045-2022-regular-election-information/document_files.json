@@ -1,0 +1,51 @@
+{
+  "requested_url": "https://www.daytonabeach.gov/1255/2022-Regular-Election-Information",
+  "final_url": "https://www.daytonabeach.gov/1255/2022-Regular-Election-Information",
+  "page_title": "2022 Regular Election Information | Daytona Beach, FL - Official Website",
+  "captured_at_utc": "2026-04-10T12:16:58.052696+00:00",
+  "navigation_mode": "domcontentloaded",
+  "navigation_error": null,
+  "count": 4,
+  "documents": [
+    {
+      "href": "https://www.daytonabeach.gov/DocumentCenter/View/19965/2022-MUNICIPAL-CANDIDATES",
+      "rawHref": "/DocumentCenter/View/19965/2022-MUNICIPAL-CANDIDATES",
+      "host": "www.daytonabeach.gov",
+      "text": "2022 Municipal Election Candidates (PDF) opens a new window",
+      "ariaLabel": "2022 Municipal Election Candidates (PDF) opens a new window Opens in new window",
+      "target": "_blank",
+      "rel": "noopener",
+      "visible": true
+    },
+    {
+      "href": "https://www.daytonabeach.gov/DocumentCenter/View/19967/Website-version---Campaign-Reporting-Schedule",
+      "rawHref": "/DocumentCenter/View/19967/Website-version---Campaign-Reporting-Schedule",
+      "host": "www.daytonabeach.gov",
+      "text": "2022 Campaign Reporting Schedule (PDF) opens a new window.",
+      "ariaLabel": "2022 Campaign Reporting Schedule (PDF) opens a new window. Opens in new window",
+      "target": "_blank",
+      "rel": "noopener",
+      "visible": true
+    },
+    {
+      "href": "https://www.daytonabeach.gov/DocumentCenter/View/19968/2022-Campaign-Signs",
+      "rawHref": "/DocumentCenter/View/19968/2022-Campaign-Signs",
+      "host": "www.daytonabeach.gov",
+      "text": "2022 Campaign Sign Regulations (PDF) opens in new window",
+      "ariaLabel": "2022 Campaign Sign Regulations (PDF) opens in new window Opens in new window",
+      "target": "_blank",
+      "rel": "noopener",
+      "visible": true
+    },
+    {
+      "href": "https://www.daytonabeach.gov/DocumentCenter/View/20905/2022-Election-Ads-PDF",
+      "rawHref": "/DocumentCenter/View/20905/2022-Election-Ads-PDF",
+      "host": "www.daytonabeach.gov",
+      "text": "2022 Election Ads",
+      "ariaLabel": "",
+      "target": "_self",
+      "rel": "",
+      "visible": true
+    }
+  ]
+}

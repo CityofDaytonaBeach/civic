@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Temporary Sign Code - HTML PDF Replica</title>
+  <style>
+html,body{margin:0;padding:0;background:#fff;color:#111827;font:16px/1.5 "Segoe UI",Tahoma,Arial,sans-serif}
+body{min-height:100vh}
+body.high-contrast{background:#000;color:#fff}
+body.readable-font{font-family:Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}a:hover{text-decoration:underline}
+button,input{font:inherit}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.hidden{display:none!important}
+.skip-link{position:absolute;left:12px;top:12px;transform:translateY(-180%);background:#fff;color:#111827;padding:10px 14px;border-radius:10px;z-index:1000}
+.skip-link:focus{transform:translateY(0)}
+.pdf-shell{width:100%;max-width:none;margin:0;padding:0}
+.viewer{background:#fff;border:0;border-radius:0;box-shadow:none;overflow:hidden;min-height:100vh}
+.viewer.sidebar-collapsed .viewer-body{grid-template-columns:minmax(0,1fr) 300px}
+.viewer.sidebar-collapsed .sidebar{display:none}
+.viewer.tools-collapsed .viewer-body{grid-template-columns:220px minmax(0,1fr)}
+.viewer.tools-collapsed .tools{display:none}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 14px;background:#2b2f35;border-bottom:1px solid #1c1f24}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand__badge{width:28px;height:28px;border-radius:8px;background:#e53935;color:#fff;display:grid;place-items:center;font-weight:800}
+.brand__title{font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#f9fafb}
+.brand__sub{font-size:12px;color:#aeb8c4}
+.top-actions,.toolbar-actions,.mode-toggle,.page-nav,.zoom-controls,.tool-group{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.topbar,.toolbar,.sidebar,.tools,.sidebar__head,.tools__head,.thumb-link,.transcript-list summary,.transcript-list pre,.tools__body,.tools__body p,.tools__body li,.tools__body label{color:#f3f4f6}
+.ui-btn,.ui-link,.page-input,.zoom-select{display:inline-flex;align-items:center;justify-content:center;min-height:34px;padding:0 12px;border-radius:9px;border:1px solid #4a5058;background:#3b4149;color:#f3f4f6}
+.ui-btn[aria-pressed="true"],.ui-btn.active{background:#4b5563;border-color:#6b7280;color:#fff}
+.ui-btn:hover,.ui-link:hover{background:#4a5058;text-decoration:none}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 14px;background:#3a3f46;border-bottom:1px solid #2a2e34}
+.page-input,.zoom-select{width:72px;padding:0 8px;text-align:center}
+.viewer-body{display:grid;grid-template-columns:220px minmax(0,1fr) 300px;min-height:calc(100vh - 150px);background:#fff}
+.sidebar,.tools{background:#3a3f46;border-right:1px solid #2a2e34;overflow:auto}
+.tools{border-right:0;border-left:1px solid #2a2e34}
+.sidebar__head,.tools__head{padding:14px 16px;border-bottom:1px solid #2a2e34;font-weight:700}
+.thumb-list,.tools__body,.transcript-list{padding:14px;display:grid;gap:12px}
+.thumb-link{display:grid;gap:6px;padding:10px;border-radius:12px;border:1px solid #4a5058;background:#444a53;color:#e5e7eb}
+.thumb-link.active{outline:2px solid #d1d5db}
+.thumb-link span{font-size:12px;color:#b9c2cf}
+.viewer-main{overflow:auto;background:#fff}
+.mode-panels{position:relative;height:100%}
+.mode-panel{height:100%}
+.viewer-stage{padding:22px 24px 32px;background:#fff}
+.page-stack{display:grid;gap:26px;justify-content:stretch;transform-origin:top center}
+.page-card{width:100%;display:grid;justify-items:center}
+.page-label{font-size:13px;color:#374151;margin:0 0 8px;justify-self:start;width:min(100%,816px)}
+.pdf-page{position:relative;background:#fff;box-shadow:0 12px 28px rgba(0,0,0,.18);overflow:hidden}
+.pdf-page:focus-visible{outline:3px solid #111827;outline-offset:3px}
+.pdf-page img,.pdf-page svg{position:absolute;display:block}
+.vector-layer,.image-layer,.text-layer{position:absolute;inset:0}
+.text-layer{z-index:3}
+.text-layer--assistive{opacity:.015}
+.text-span{position:absolute;display:block;white-space:pre;transform-origin:top left;color:#111;line-height:1;overflow:visible;text-rendering:geometricPrecision;box-sizing:border-box;padding:0 6px 2px 0}
+.page-fallback{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.page-outline{position:absolute;inset:0;border:1px solid rgba(0,0,0,.08);pointer-events:none}
+.pdf-frame{width:100%;height:calc(100vh - 170px);border:0;background:#fff}
+.tools .ui-btn{justify-content:flex-start}
+.tools__body .tool-row{display:grid;gap:8px}
+.tools__body ul{margin:0;padding-left:18px}
+.transcript-list details{background:#444a53;border:1px solid #555c66;border-radius:12px;padding:10px 12px}
+.transcript-list summary{cursor:pointer;font-weight:700}
+.transcript-list pre{white-space:pre-wrap;word-break:break-word;font:13px/1.45 Consolas,"Courier New",monospace}
+.back-top{position:fixed;right:18px;bottom:18px;z-index:40;border:1px solid #4a5058;background:#2b2f35;color:#fff;border-radius:999px;padding:10px 14px;box-shadow:0 12px 28px rgba(0,0,0,.22)}
+.back-top:hover{background:#3b4149}
+body.high-contrast .viewer{background:#111;border-color:#000}
+body.high-contrast .topbar,body.high-contrast .toolbar,body.high-contrast .sidebar,body.high-contrast .tools{background:#111;color:#fff}
+body.high-contrast .ui-btn,body.high-contrast .ui-link,body.high-contrast .page-input,body.high-contrast .zoom-select,body.high-contrast .thumb-link,body.high-contrast .back-top{background:#000;border-color:#fff;color:#fff}
+body.high-contrast .pdf-page{box-shadow:0 0 0 2px #fff}
+@media(max-width:1180px){.viewer-body{grid-template-columns:180px minmax(0,1fr)}.tools{display:none}}
+@media(max-width:860px){.viewer-body,.viewer.sidebar-collapsed .viewer-body,.viewer.tools-collapsed .viewer-body{grid-template-columns:1fr}.sidebar,.tools{display:none}.toolbar{align-items:flex-start;flex-direction:column}.topbar{align-items:flex-start;flex-direction:column}.pdf-frame{height:70vh}}
+</style>
+</head>
+<body data-total-pages="1">
+  <a class="skip-link" href="#viewer-main">Skip to PDF content</a>
+  <a class="skip-link" href="#tools-panel">Skip to accessibility tools</a>
+  <main class="pdf-shell" id="pdf-main" role="main" aria-label="Accessible HTML version of Temporary Sign Code">
+    <div class="viewer">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand__badge" aria-hidden="true">A</div>
+          <div>
+            <div class="brand__title">Temporary Sign Code</div>
+            <div class="brand__sub">temporary-sign-code.pdf - 1 page</div>
+          </div>
+        </div>
+      </header>
+        <section class="toolbar" aria-label="Document controls">
+        <div class="toolbar-actions">
+          <div class="tool-group" role="group" aria-label="Panel controls">
+            <button class="ui-btn" id="toggle-pages" type="button" aria-controls="pages-panel" aria-expanded="true" aria-pressed="true">Pages</button>
+            <button class="ui-btn" id="toggle-tools" type="button" aria-controls="tools-panel" aria-expanded="true" aria-pressed="true">Accessibility</button>
+            <button class="ui-btn" id="toggle-transcript" type="button" aria-controls="transcript-list transcript-panel" aria-expanded="false" aria-pressed="false">Transcript</button>
+          </div>
+          <div class="page-nav" role="group" aria-label="Page navigation">
+            <button class="ui-btn" id="prev-page" type="button">Previous</button>
+            <label class="sr-only" for="page-input">Current page</label>
+            <input class="page-input" id="page-input" type="number" min="1" max="1" inputmode="numeric">
+            <span>of 1</span>
+            <button class="ui-btn" id="next-page" type="button">Next</button>
+          </div>
+          <div class="zoom-controls" role="group" aria-label="Zoom controls">
+            <button class="ui-btn" id="zoom-out" type="button">-</button>
+            <span id="zoom-label" aria-live="polite">100%</span>
+            <button class="ui-btn" id="zoom-in" type="button">+</button>
+            <label class="sr-only" for="zoom-select">Zoom percent</label>
+            <select class="zoom-select" id="zoom-select" aria-label="Zoom percent">
+              <option value="50">50%</option>
+              <option value="75">75%</option>
+              <option value="100" selected>100%</option>
+              <option value="125">125%</option>
+              <option value="150">150%</option>
+              <option value="200">200%</option>
+            </select>
+            <button class="ui-btn" id="actual-size" type="button">Actual Size</button>
+            <button class="ui-btn" id="fit-page" type="button">Fit Page</button>
+            <button class="ui-btn" id="fit-width" type="button">Fit Width</button>
+          </div>
+        </div>
+        <div class="tool-group" aria-label="Viewer tools">
+          <button class="ui-btn" id="reset-view" type="button">Reset</button>
+        </div>
+      </section>
+      <div class="viewer-body">
+        <aside class="sidebar" id="pages-panel" aria-label="Pages">
+          <div class="sidebar__head">Pages</div>
+          <nav class="thumb-list" aria-label="Page thumbnails"><a class="thumb-link active" href="#page-1" data-page="1" aria-label="Jump to page 1"><strong>Page 1</strong></a></nav>
+        </aside>
+        <section class="viewer-main" id="viewer-main" tabindex="-1" role="region" aria-label="PDF pages">
+          <div class="viewer-stage">
+            <div class="page-stack" id="page-stack" role="document" aria-label="Temporary Sign Code pages">
+    <article class="page-card" id="page-1" data-page="1">
+      <p class="page-label">Page 1 of 1</p>
+      <section class="pdf-page" role="region" tabindex="0" aria-roledescription="PDF page" aria-labelledby="page-1-title" aria-describedby="page-1-surface-note page-1-transcript" style="width:816.00px;height:1056.00px;">
+        <h2 class="sr-only" id="page-1-title">Page 1</h2>
+        <div class="sr-only" id="page-1-surface-note">Page 1 is rendered as structured HTML with selectable text, extracted images, and vector artwork.</div>
+        <div class="sr-only" id="page-1-transcript">LJL 03 -16-16
+THE CITY OF DAYTONA BEACH
+DEVELOPMENT AND ADMINISTRATIVE SERVICES DEPARTMENT
+PERMIT &amp; LICENSES DIVISION
+301 S. RIDGEWOOD AVENUE
+DAYTONA BEACH, FLORIDA 32114
+PHONE (386) 671- 8178
+FAX (386) 671- 8149
+
+Dear Candidate:
+Campaign Signs are now governed by 6.10.J.12, Land Development Code, Temporary Signs and
+the applicable regulations are listed below. If you have any questions please contact Permits &amp;
+Licensing at (386) 671- 8178.
+
+1. Temporary signs may not be displayed on any parcel more than 100 days in any 12- month
+period.
+2. In residential zoning districts, a maximum of 10 temporary signs, each sign not to exceed 3 square feet in sign area, may be displayed on each parcel of land.
+
+3. In nonresidential zoning districts, temporary signs with total sign area not exceeding 32 square feet for each 100 feet of street frontage shall be permitted.
+
+4.
+No sign shall be erected on public property or right -of way.
+
+5. No sign permit will be required for these temporary signs.
+
+Candidates and property owners are strongly encouraged to timely remove the signs once the
+election is over and/ or the sign is no longer relevant.</div>
+        <svg class="vector-layer" width="816.00" height="1056.00" viewBox="0 0 816.00 1056.00" aria-hidden="true" focusable="false"><rect x="95.04" y="240.64" width="140.16" height="4.00" fill="rgb(0, 0, 0)" fill-opacity="1.0" stroke="none" stroke-opacity="None" stroke-width="1.33" rx="0" ry="0" /><rect x="95.04" y="238.72" width="140.16" height="0.96" fill="rgb(0, 0, 0)" fill-opacity="1.0" stroke="none" stroke-opacity="None" stroke-width="1.33" rx="0" ry="0" /><rect x="234.24" y="238.72" width="5.92" height="0.96" fill="rgb(0, 0, 0)" fill-opacity="1.0" stroke="none" stroke-opacity="None" stroke-width="1.33" rx="0" ry="0" /><rect x="234.24" y="240.64" width="5.92" height="4.00" fill="rgb(0, 0, 0)" fill-opacity="1.0" stroke="none" stroke-opacity="None" stroke-width="1.33" rx="0" ry="0" /><rect x="240.16" y="240.64" width="494.24" height="4.00" fill="rgb(0, 0, 0)" fill-opacity="1.0" stroke="none" stroke-opacity="None" stroke-width="1.33" rx="0" ry="0" /><rect x="240.16" y="238.72" width="494.24" height="0.96" fill="rgb(0, 0, 0)" fill-opacity="1.0" stroke="none" stroke-opacity="None" stroke-width="1.33" rx="0" ry="0" /><rect x="144.00" y="592.32" width="404.32" height="1.60" fill="rgb(0, 0, 0)" fill-opacity="1.0" stroke="none" stroke-opacity="None" stroke-width="1.33" rx="0" ry="0" /></svg>
+        <div class="image-layer"><img aria-hidden="true" alt="" src="data:image/png;base64,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" style="left:103.20px;top:96.00px;width:126.87px;height:131.07px;"></div>
+        
+        <div class="text-layer"><span class="text-span" style="left:646.24px;top:990.99px;width:83.06px;min-height:20.54px;font-family:'Times New Roman', Times, serif;font-size:13.28px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">LJL 03-16-16 </span><span class="text-span" style="left:258.72px;top:92.20px;width:487.77px;min-height:50.14px;font-family:Arial, Helvetica, sans-serif;font-size:30.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">THE CITY OF DAYTONA BEACH </span><span class="text-span" style="left:312.32px;top:129.87px;width:424.57px;min-height:20.78px;font-family:Arial, Helvetica, sans-serif;font-size:13.28px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">DEVELOPMENT AND ADMINISTRATIVE SERVICES DEPARTMENT </span><span class="text-span" style="left:532.32px;top:145.23px;width:204.58px;min-height:20.78px;font-family:Arial, Helvetica, sans-serif;font-size:13.28px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">PERMIT &amp; LICENSES DIVISION </span><span class="text-span" style="left:541.28px;top:160.60px;width:195.61px;min-height:20.78px;font-family:Arial, Helvetica, sans-serif;font-size:13.28px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">301 S. RIDGEWOOD AVENUE </span><span class="text-span" style="left:507.04px;top:175.96px;width:229.85px;min-height:20.78px;font-family:Arial, Helvetica, sans-serif;font-size:13.28px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">DAYTONA BEACH, FLORIDA 32114 </span><span class="text-span" style="left:584.96px;top:191.33px;width:151.93px;min-height:20.78px;font-family:Arial, Helvetica, sans-serif;font-size:13.28px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">PHONE (386) 671-8178 </span><span class="text-span" style="left:606.41px;top:206.53px;width:130.49px;min-height:20.78px;font-family:Arial, Helvetica, sans-serif;font-size:13.28px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">FAX (386) 671-8149 </span><span class="text-span" style="left:96.00px;top:297.76px;width:114.48px;min-height:24.75px;font-family:'Times New Roman', Times, serif;font-size:16.00px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">Dear Candidate: </span><span class="text-span" style="left:96.00px;top:334.56px;width:634.00px;min-height:24.75px;font-family:'Times New Roman', Times, serif;font-size:16.00px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">Campaign Signs are now governed by 6.10.J.12, Land Development Code, Temporary Signs and </span><span class="text-span" style="left:96.00px;top:352.96px;width:634.00px;min-height:24.75px;font-family:'Times New Roman', Times, serif;font-size:16.00px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">the applicable regulations are listed below.  If you have any questions please contact Permits &amp; </span><span class="text-span" style="left:96.00px;top:371.36px;width:196.56px;min-height:24.75px;font-family:'Times New Roman', Times, serif;font-size:16.00px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">Licensing at (386) 671-8178. </span><span class="text-span" style="left:120.00px;top:408.16px;width:18.00px;min-height:24.75px;font-family:'Times New Roman', Times, serif;font-size:16.00px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">1.</span><span class="text-span" style="left:144.00px;top:408.16px;width:586.00px;min-height:24.75px;font-family:'Times New Roman', Times, serif;font-size:16.00px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">Temporary signs may not be displayed on any parcel more than 100 days in any 12-month </span><span class="text-span" style="left:144.00px;top:426.56px;width:58.80px;min-height:24.75px;font-family:'Times New Roman', Times, serif;font-size:16.00px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">period.  </span><span class="text-span" style="left:120.00px;top:463.36px;width:18.00px;min-height:24.75px;font-family:'Times New Roman', Times, serif;font-size:16.00px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">2.</span><span class="text-span" style="left:144.00px;top:463.36px;width:586.00px;min-height:24.75px;font-family:'Times New Roman', Times, serif;font-size:16.00px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">In residential zoning districts, a maximum of 10 temporary signs, each sign not to exceed </span><span class="text-span" style="left:144.00px;top:481.76px;width:438.80px;min-height:24.75px;font-family:'Times New Roman', Times, serif;font-size:16.00px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">3 square feet in sign area, may be displayed on each parcel of land. </span><span class="text-span" style="left:120.00px;top:518.56px;width:18.00px;min-height:24.75px;font-family:'Times New Roman', Times, serif;font-size:16.00px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">3.</span><span class="text-span" style="left:144.00px;top:518.56px;width:586.00px;min-height:24.75px;font-family:'Times New Roman', Times, serif;font-size:16.00px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">In nonresidential zoning districts, temporary signs with total sign area not exceeding 32 </span><span class="text-span" style="left:144.00px;top:536.96px;width:427.60px;min-height:24.75px;font-family:'Times New Roman', Times, serif;font-size:16.00px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">square feet for each 100 feet of street frontage shall be permitted. </span><span class="text-span" style="left:120.00px;top:573.92px;width:18.00px;min-height:24.75px;font-family:'Times New Roman', Times, serif;font-size:16.00px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">4.</span><span class="text-span" style="left:144.00px;top:573.66px;width:418.16px;min-height:25.34px;font-family:'Times New Roman', Times, serif;font-size:16.00px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">No sign shall be erected on public property or right-of way.  </span><span class="text-span" style="left:120.00px;top:610.40px;width:18.00px;min-height:24.75px;font-family:'Times New Roman', Times, serif;font-size:16.00px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">5.</span><span class="text-span" style="left:144.00px;top:610.40px;width:385.52px;min-height:24.75px;font-family:'Times New Roman', Times, serif;font-size:16.00px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">No sign permit will be required for these temporary signs.  </span><span class="text-span" style="left:96.00px;top:647.20px;width:634.00px;min-height:24.75px;font-family:'Times New Roman', Times, serif;font-size:16.00px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">Candidates and property owners are strongly encouraged to timely remove the signs once the </span><span class="text-span" style="left:96.00px;top:665.60px;width:350.00px;min-height:24.75px;font-family:'Times New Roman', Times, serif;font-size:16.00px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">election is over and/or the sign is no longer relevant.  </span></div>
+        <div class="page-outline" aria-hidden="true"></div>
+      </section>
+    </article>
+    </div>
+          </div>
+        </section>
+        <aside class="tools" id="tools-panel" aria-label="Accessibility tools">
+          <div class="tools__head">Accessibility</div>
+          <div class="tools__body">
+            <div class="tool-row">
+              <button class="ui-btn" id="toggle-contrast" type="button" aria-pressed="false">High Contrast</button>
+              <button class="ui-btn" id="toggle-readable" type="button" aria-pressed="false">Readable Font</button>
+            </div>
+            <p>This HTML view exposes each page as a labeled region, keeps a plain-text transcript for every page when text can be extracted, and falls back to a high-resolution preview when visual fidelity is safer than positioned text.</p>
+            <ul>
+              <li>Semantic HTML pages: 1</li>
+              <li>Hybrid preview pages: 0</li>
+              <li>Image fallback pages: 0</li>
+              <li>Overlap-risk pages corrected: 0</li>
+            </ul>
+            <div class="status-chip"><strong>Status</strong> <span id="viewer-status" aria-live="polite">HTML page 1, 100% zoom</span></div>
+          </div>
+          <div class="tools__head hidden" id="transcript-panel">Transcript</div>
+          <div class="transcript-list hidden" id="transcript-list" role="region" aria-label="Page transcripts"><details open><summary id="page-1-transcript-summary">Page 1 transcript</summary><pre aria-labelledby="page-1-transcript-summary">LJL 03 -16-16
+THE CITY OF DAYTONA BEACH
+DEVELOPMENT AND ADMINISTRATIVE SERVICES DEPARTMENT
+PERMIT &amp; LICENSES DIVISION
+301 S. RIDGEWOOD AVENUE
+DAYTONA BEACH, FLORIDA 32114
+PHONE (386) 671- 8178
+FAX (386) 671- 8149
+
+Dear Candidate:
+Campaign Signs are now governed by 6.10.J.12, Land Development Code, Temporary Signs and
+the applicable regulations are listed below. If you have any questions please contact Permits &amp;
+Licensing at (386) 671- 8178.
+
+1. Temporary signs may not be displayed on any parcel more than 100 days in any 12- month
+period.
+2. In residential zoning districts, a maximum of 10 temporary signs, each sign not to exceed 3 square feet in sign area, may be displayed on each parcel of land.
+
+3. In nonresidential zoning districts, temporary signs with total sign area not exceeding 32 square feet for each 100 feet of street frontage shall be permitted.
+
+4.
+No sign shall be erected on public property or right -of way.
+
+5. No sign permit will be required for these temporary signs.
+
+Candidates and property owners are strongly encouraged to timely remove the signs once the
+election is over and/ or the sign is no longer relevant.</pre></details></div>
+        </aside>
+      </div>
+    </div>
+  </main>
+  <button class="back-top" id="back-to-top" type="button" aria-controls="viewer-main" aria-label="Return to top">Top</button>
+  <script>
+(function(){
+  const viewer = document.querySelector('.viewer');
+  const pageInput = document.getElementById('page-input');
+  const pageTotal = Number(document.body.dataset.totalPages || '1');
+  const prevBtn = document.getElementById('prev-page');
+  const nextBtn = document.getElementById('next-page');
+  const zoomIn = document.getElementById('zoom-in');
+  const zoomOut = document.getElementById('zoom-out');
+  const fitWidth = document.getElementById('fit-width');
+  const fitPage = document.getElementById('fit-page');
+  const actualSize = document.getElementById('actual-size');
+  const zoomSelect = document.getElementById('zoom-select');
+  const zoomLabel = document.getElementById('zoom-label');
+  const pageStack = document.getElementById('page-stack');
+  const viewerMain = document.getElementById('viewer-main');
+  const pagesToggle = document.getElementById('toggle-pages');
+  const toolsToggle = document.getElementById('toggle-tools');
+  const toolsPanel = document.getElementById('tools-panel');
+  const transcriptToggle = document.getElementById('toggle-transcript');
+  const transcriptPanel = document.getElementById('transcript-panel');
+  const transcriptList = document.getElementById('transcript-list');
+  const contrastToggle = document.getElementById('toggle-contrast');
+  const readableToggle = document.getElementById('toggle-readable');
+  const resetBtn = document.getElementById('reset-view');
+  const viewerStatus = document.getElementById('viewer-status');
+  const backTop = document.getElementById('back-to-top');
+  const thumbs = Array.from(document.querySelectorAll('.thumb-link'));
+  let currentPage = 1;
+  let zoom = 1;
+
+  function clampPage(n){ return Math.max(1, Math.min(pageTotal, n || 1)); }
+  function setExpanded(button, expanded){
+    if (!button) return;
+    button.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    button.setAttribute('aria-pressed', expanded ? 'true' : 'false');
+  }
+  function setPressed(button, pressed){
+    if (!button) return;
+    button.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+  }
+  function syncPanelButtons(){
+    if (!viewer) return;
+    setExpanded(pagesToggle, !viewer.classList.contains('sidebar-collapsed'));
+    setExpanded(toolsToggle, !viewer.classList.contains('tools-collapsed'));
+    const transcriptOpen = transcriptPanel && !transcriptPanel.classList.contains('hidden');
+    setExpanded(transcriptToggle, Boolean(transcriptOpen));
+  }
+  function syncPreferenceButtons(){
+    setPressed(contrastToggle, document.body.classList.contains('high-contrast'));
+    setPressed(readableToggle, document.body.classList.contains('readable-font'));
+  }
+  function updateStatus(){
+    if (!viewerStatus) return;
+    viewerStatus.textContent = 'HTML page ' + currentPage + ', ' + Math.round(zoom * 100) + '% zoom';
+  }
+  function updateZoomUi(){
+    if (zoomLabel) zoomLabel.textContent = Math.round(zoom * 100) + '%';
+    if (zoomSelect) zoomSelect.value = String(Math.round(zoom * 100));
+  }
+  function syncButtons(){
+    thumbs.forEach(link => link.classList.toggle('active', Number(link.dataset.page) === currentPage));
+    updateStatus();
+  }
+  function scrollToPage(page){
+    currentPage = clampPage(page);
+    pageInput.value = String(currentPage);
+    const el = document.getElementById('page-' + currentPage);
+    if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    syncButtons();
+  }
+  function scrollToTop(){
+    currentPage = 1;
+    pageInput.value = '1';
+    if (viewerMain) {
+      viewerMain.scrollTo({top: 0, behavior: 'smooth'});
+    }
+    window.scrollTo({top: 0, behavior: 'smooth'});
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    syncButtons();
+  }
+  function applyZoom(){
+    if (!pageStack) return;
+    pageStack.style.zoom = String(zoom);
+    updateZoomUi();
+    updateStatus();
+  }
+  function fitToWidth(){
+    const page = document.querySelector('.pdf-page');
+    if (!page) return;
+    const width = page.getBoundingClientRect().width / zoom;
+    const target = Math.max(0.5, Math.min(2.25, (viewerMain.clientWidth - 48) / width));
+    zoom = target;
+    applyZoom();
+  }
+  function fitToPage(){
+    const page = document.querySelector('.pdf-page');
+    if (!page) return;
+    const width = page.getBoundingClientRect().width / zoom;
+    const height = page.getBoundingClientRect().height / zoom;
+    const widthZoom = (viewerMain.clientWidth - 48) / width;
+    const heightZoom = (viewerMain.clientHeight - 72) / height;
+    zoom = Math.max(0.5, Math.min(2.25, Math.min(widthZoom, heightZoom)));
+    applyZoom();
+  }
+  prevBtn.addEventListener('click', () => scrollToPage(currentPage - 1));
+  nextBtn.addEventListener('click', () => scrollToPage(currentPage + 1));
+  pageInput.addEventListener('change', () => scrollToPage(Number(pageInput.value)));
+  zoomIn.addEventListener('click', () => { zoom = Math.min(2.25, zoom + 0.1); applyZoom(); });
+  zoomOut.addEventListener('click', () => { zoom = Math.max(0.5, zoom - 0.1); applyZoom(); });
+  fitWidth.addEventListener('click', fitToWidth);
+  if (fitPage) fitPage.addEventListener('click', fitToPage);
+  if (actualSize) actualSize.addEventListener('click', () => { zoom = 1; applyZoom(); });
+  if (zoomSelect) zoomSelect.addEventListener('change', () => {
+    const nextZoom = Number(zoomSelect.value) / 100;
+    if (!Number.isFinite(nextZoom)) return;
+    zoom = Math.max(0.5, Math.min(2.25, nextZoom));
+    applyZoom();
+  });
+  if (pagesToggle) pagesToggle.addEventListener('click', () => {
+    viewer.classList.toggle('sidebar-collapsed');
+    syncPanelButtons();
+  });
+  toolsToggle.addEventListener('click', () => {
+    viewer.classList.toggle('tools-collapsed');
+    syncPanelButtons();
+  });
+  transcriptToggle.addEventListener('click', () => {
+    transcriptPanel.classList.toggle('hidden');
+    transcriptList.classList.toggle('hidden');
+    syncPanelButtons();
+  });
+  contrastToggle.addEventListener('click', () => {
+    document.body.classList.toggle('high-contrast');
+    syncPreferenceButtons();
+  });
+  readableToggle.addEventListener('click', () => {
+    document.body.classList.toggle('readable-font');
+    syncPreferenceButtons();
+  });
+  resetBtn.addEventListener('click', () => {
+    zoom = 1;
+    applyZoom();
+    document.body.classList.remove('high-contrast','readable-font');
+    transcriptPanel.classList.add('hidden');
+    transcriptList.classList.add('hidden');
+    viewer.classList.remove('sidebar-collapsed','tools-collapsed');
+    syncPreferenceButtons();
+    syncPanelButtons();
+    scrollToTop();
+  });
+  if (backTop) backTop.addEventListener('click', scrollToTop);
+  thumbs.forEach(link => link.addEventListener('click', (ev) => { ev.preventDefault(); scrollToPage(Number(link.dataset.page)); }));
+  const observer = new IntersectionObserver((entries) => {
+    const visible = entries.filter(entry => entry.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
+    if (!visible) return;
+    currentPage = clampPage(Number(visible.target.dataset.page));
+    pageInput.value = String(currentPage);
+    syncButtons();
+  }, {root: viewerMain, threshold: [0.55, 0.8]});
+  document.querySelectorAll('.page-card').forEach(card => observer.observe(card));
+  pageInput.value = '1';
+  syncPanelButtons();
+  syncPreferenceButtons();
+  syncButtons();
+  fitToPage();
+  window.addEventListener('resize', fitToPage);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "requested_url": "https://www.daytonabeach.gov/396/Election-Information",
+  "final_url": "https://www.daytonabeach.gov/396/Election-Information",
+  "page_title": "Election Information | Daytona Beach, FL - Official Website",
+  "captured_at_utc": "2026-04-10T12:16:39.144230+00:00",
+  "navigation_mode": "domcontentloaded",
+  "navigation_error": null,
+  "count": 1,
+  "documents": [
+    {
+      "href": "https://www.daytonabeach.gov/DocumentCenter/View/20905/2022-Election-Ads-PDF",
+      "rawHref": "/DocumentCenter/View/20905/2022-Election-Ads-PDF",
+      "host": "www.daytonabeach.gov",
+      "text": "2022 Election Ads",
+      "ariaLabel": "",
+      "target": "_self",
+      "rel": "",
+      "visible": true
+    }
+  ]
+}

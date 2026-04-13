@@ -1,0 +1,32 @@
+{
+  "requested_url": "https://www.daytonabeach.gov/582/Polling-Locations",
+  "final_url": "https://www.voterfocus.com/PrecinctFinder/addressSearch?county=VOL",
+  "page_title": "Precinct Finder",
+  "captured_at_utc": "2026-04-09T19:44:16.945406+00:00",
+  "navigation_mode": "networkidle",
+  "navigation_error": null,
+  "evaluation_error": null,
+  "count": 2,
+  "images": [
+    {
+      "index": 0,
+      "src": "https://www.gstatic.com/images/branding/googlelogo/1x/googlelogo_color_42x16dp.png",
+      "alt": "Google Translate",
+      "title": "",
+      "width": 42,
+      "height": 16,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 1,
+      "src": "https://fonts.gstatic.com/s/i/productlogos/translate/v14/24px.svg",
+      "alt": "",
+      "title": "",
+      "width": 24,
+      "height": 24,
+      "visible": false,
+      "loading": ""
+    }
+  ]
+}

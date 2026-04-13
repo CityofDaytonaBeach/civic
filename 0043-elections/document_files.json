@@ -1,0 +1,101 @@
+{
+  "requested_url": "https://www.daytonabeach.gov/394/Elections",
+  "final_url": "https://www.daytonabeach.gov/394/Elections",
+  "page_title": "Elections | Daytona Beach, FL - Official Website",
+  "captured_at_utc": "2026-04-10T12:16:38.058218+00:00",
+  "navigation_mode": "domcontentloaded",
+  "navigation_error": null,
+  "count": 9,
+  "documents": [
+    {
+      "href": "https://www.daytonabeach.gov/DocumentCenter/View/23683/BECOMING-A-CANDIDATE",
+      "rawHref": "/DocumentCenter/View/23683/BECOMING-A-CANDIDATE",
+      "host": "www.daytonabeach.gov",
+      "text": "criteria for becoming a candidate",
+      "ariaLabel": "",
+      "target": "",
+      "rel": "",
+      "visible": true
+    },
+    {
+      "href": "https://fl-daytonabeach.civicplus.com/DocumentCenter/View/23782/Website-version---Candidates",
+      "rawHref": "https://fl-daytonabeach.civicplus.com/DocumentCenter/View/23782/Website-version---Candidates",
+      "host": "fl-daytonabeach.civicplus.com",
+      "text": "click here",
+      "ariaLabel": "click here Version OptionsElectionsHeadline Opens in new window",
+      "target": "_blank",
+      "rel": "noopener",
+      "visible": true
+    },
+    {
+      "href": "https://www.daytonabeach.gov/DocumentCenter/View/24017/Campaign-Reporting-Schedule",
+      "rawHref": "/DocumentCenter/View/24017/Campaign-Reporting-Schedule",
+      "host": "www.daytonabeach.gov",
+      "text": "Click Here to View Campaign Reporting Schedule 2026",
+      "ariaLabel": "Click Here to View Campaign Reporting Schedule 2026 Opens in new window",
+      "target": "_blank",
+      "rel": "noopener",
+      "visible": true
+    },
+    {
+      "href": "https://www.daytonabeach.gov/DocumentCenter/View/24022/DB---2026-Municipal-Election-Schedule---Website",
+      "rawHref": "/DocumentCenter/View/24022/DB---2026-Municipal-Election-Schedule---Website",
+      "host": "www.daytonabeach.gov",
+      "text": "Click Here to View 2026 Municipal Election Schedule",
+      "ariaLabel": "Click Here to View 2026 Municipal Election Schedule Opens in new window",
+      "target": "_blank",
+      "rel": "noopener",
+      "visible": true
+    },
+    {
+      "href": "https://www.daytonabeach.gov/DocumentCenter/View/22893/Temporary-Sign-Code",
+      "rawHref": "/DocumentCenter/View/22893/Temporary-Sign-Code",
+      "host": "www.daytonabeach.gov",
+      "text": "click here",
+      "ariaLabel": "click here Opens in new window",
+      "target": "_blank",
+      "rel": "noopener",
+      "visible": true
+    },
+    {
+      "href": "https://www.daytonabeach.gov/DocumentCenter/View/23196/2022-402-Resolution-Map",
+      "rawHref": "/DocumentCenter/View/23196/2022-402-Resolution-Map",
+      "host": "www.daytonabeach.gov",
+      "text": "click here",
+      "ariaLabel": "click here Opens in new window",
+      "target": "_blank",
+      "rel": "noopener",
+      "visible": true
+    },
+    {
+      "href": "https://www.daytonabeach.gov/DocumentCenter/View/24025/Volusia-County---Supervisor-of-Elections---Dates-and-Deadlines",
+      "rawHref": "/DocumentCenter/View/24025/Volusia-County---Supervisor-of-Elections---Dates-and-Deadlines",
+      "host": "www.daytonabeach.gov",
+      "text": "Volusia County - Supervisor of Elections - Dates and Deadlines",
+      "ariaLabel": "Volusia County - Supervisor of Elections - Dates and Deadlines Opens in new window",
+      "target": "_blank",
+      "rel": "noopener",
+      "visible": true
+    },
+    {
+      "href": "https://www.daytonabeach.gov/DocumentCenter/View/16462",
+      "rawHref": "/DocumentCenter/View/16462",
+      "host": "www.daytonabeach.gov",
+      "text": "Opens a New Window.",
+      "ariaLabel": " Opens a New Window.  Opens in new window",
+      "target": "_blank",
+      "rel": "",
+      "visible": false
+    },
+    {
+      "href": "https://www.daytonabeach.gov/DocumentCenter/View/24394/Website-version---Polling-Places---Citywide",
+      "rawHref": "/DocumentCenter/View/24394/Website-version---Polling-Places---Citywide",
+      "host": "www.daytonabeach.gov",
+      "text": "Polling Places - City Wide - City of Daytona Beach (PDF) Opens a New Window.",
+      "ariaLabel": "Polling Places - City Wide - City of Daytona Beach (PDF) Opens a New Window. Opens in new window",
+      "target": "_blank",
+      "rel": "noopener",
+      "visible": true
+    }
+  ]
+}

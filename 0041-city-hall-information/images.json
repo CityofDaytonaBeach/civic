@@ -1,0 +1,132 @@
+{
+  "requested_url": "https://www.daytonabeach.gov/399/City-Hall-Information",
+  "final_url": "https://www.daytonabeach.gov/399/City-Hall-Information",
+  "page_title": "City Hall Information | Daytona Beach, FL - Official Website",
+  "captured_at_utc": "2026-04-09T19:44:08.775954+00:00",
+  "navigation_mode": "networkidle",
+  "navigation_error": null,
+  "evaluation_error": null,
+  "count": 12,
+  "images": [
+    {
+      "index": 0,
+      "src": "https://www.daytonabeach.gov/Common/images/ajax-loader.gif",
+      "alt": "",
+      "title": "Loading",
+      "width": 66,
+      "height": 66,
+      "visible": false,
+      "loading": ""
+    },
+    {
+      "index": 1,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=17435",
+      "alt": "Home Icon",
+      "title": "",
+      "width": 58,
+      "height": 58,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 2,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=17386",
+      "alt": "Homepage",
+      "title": "",
+      "width": 219,
+      "height": 84,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 3,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=17396",
+      "alt": "Facebook",
+      "title": "",
+      "width": 53,
+      "height": 53,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 4,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=17404",
+      "alt": "Twitter",
+      "title": "",
+      "width": 53,
+      "height": 53,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 5,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=17398",
+      "alt": "Instagram",
+      "title": "",
+      "width": 53,
+      "height": 54,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 6,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=17406",
+      "alt": "YouTube",
+      "title": "",
+      "width": 53,
+      "height": 54,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 7,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=17402",
+      "alt": "",
+      "title": "",
+      "width": 53,
+      "height": 54,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 8,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=17400",
+      "alt": "",
+      "title": "",
+      "width": 53,
+      "height": 54,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 9,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=17394",
+      "alt": "Search1",
+      "title": "",
+      "width": 68,
+      "height": 68,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 10,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=17430",
+      "alt": "World Famous Daytona Beach logo",
+      "title": "World Famous Daytona Beach logo",
+      "width": 311,
+      "height": 120,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 11,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=17392",
+      "alt": "",
+      "title": "",
+      "width": 2200,
+      "height": 1000,
+      "visible": true,
+      "loading": ""
+    }
+  ]
+}
