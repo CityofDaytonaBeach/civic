@@ -1,0 +1,51 @@
+{
+  "requested_url": "https://www.daytonabeach.gov/1472/City-Commissioner-Monica-Paris",
+  "final_url": "https://www.daytonabeach.gov/1472/City-Commissioner-Monica-Paris",
+  "page_title": "City Commissioner Monica Paris | Daytona Beach, FL - Official Website",
+  "captured_at_utc": "2026-04-10T12:12:11.271447+00:00",
+  "navigation_mode": "networkidle",
+  "navigation_error": null,
+  "count": 4,
+  "documents": [
+    {
+      "href": "https://www.daytonabeach.gov/DocumentCenter/View/22849/THE-CITY-OF-DAYTONA-BEACH-BOARD-LIST-",
+      "rawHref": "/DocumentCenter/View/22849/THE-CITY-OF-DAYTONA-BEACH-BOARD-LIST-",
+      "host": "www.daytonabeach.gov",
+      "text": "Current Members (PDF)",
+      "ariaLabel": "",
+      "target": "_self",
+      "rel": "",
+      "visible": false
+    },
+    {
+      "href": "https://www.daytonabeach.gov/DocumentCenter/Home/View/44",
+      "rawHref": "/DocumentCenter/Home/View/44",
+      "host": "www.daytonabeach.gov",
+      "text": "Introduction and History (PDF)",
+      "ariaLabel": "Introduction and History (PDF) Opens in new window",
+      "target": "_blank",
+      "rel": "noopener",
+      "visible": false
+    },
+    {
+      "href": "https://www.daytonabeach.gov/DocumentCenter/View/19202/Board-Responsibilities-Function-Guide",
+      "rawHref": "/DocumentCenter/View/19202/Board-Responsibilities-Function-Guide",
+      "host": "www.daytonabeach.gov",
+      "text": "Responsibilities & Functions (PDF)",
+      "ariaLabel": "Responsibilities & Functions (PDF) Opens in new window",
+      "target": "_blank",
+      "rel": "noopener",
+      "visible": false
+    },
+    {
+      "href": "https://www.daytonabeach.gov/DocumentCenter/View/22823/CODB-Board-Vacancies-02-20-24",
+      "rawHref": "/DocumentCenter/View/22823/CODB-Board-Vacancies-02-20-24",
+      "host": "www.daytonabeach.gov",
+      "text": "Vacancy List (PDF)",
+      "ariaLabel": "Vacancy List (PDF) Opens in new window",
+      "target": "_blank",
+      "rel": "noopener",
+      "visible": false
+    }
+  ]
+}

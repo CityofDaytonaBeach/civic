@@ -1,0 +1,32 @@
+{
+  "requested_url": "https://www.daytonabeach.gov/1224/Board-Application",
+  "final_url": "https://forms.daytonabeach.gov/260045423792051",
+  "page_title": "Board or Commission Member Candidate Application Form",
+  "captured_at_utc": "2026-04-09T19:42:38.401632+00:00",
+  "navigation_mode": "networkidle",
+  "navigation_error": null,
+  "evaluation_error": null,
+  "count": 2,
+  "images": [
+    {
+      "index": 0,
+      "src": "https://daytonabeach.jotform.com/uploads/server_files/brandkit/019aa2101fd57f78bec1aa9677f6af62ddbd/019aa213ee6871a5be6389d0638ce4c608ac.png",
+      "alt": "Board or Commission Member Candidate Application Form",
+      "title": "",
+      "width": 219,
+      "height": 84,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 1,
+      "src": "https://forms.daytonabeach.gov/events/form/260045423792051/?ref=&res=1440x1000&eventID=1775763745796_260045423792051_4gX00HU&loc=https%253A%252F%252Fforms.daytonabeach.gov%252F260045423792051",
+      "alt": "jftr",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": false,
+      "loading": ""
+    }
+  ]
+}
