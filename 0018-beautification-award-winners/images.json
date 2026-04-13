@@ -1,0 +1,212 @@
+{
+  "requested_url": "https://www.daytonabeach.gov/630/Beautification-Award-Winners",
+  "final_url": "https://www.daytonabeach.gov/gallery.aspx?AID=3",
+  "page_title": "Photo Gallery • Monthly Beautification Award Recipients",
+  "captured_at_utc": "2026-04-09T19:43:12.947193+00:00",
+  "navigation_mode": "networkidle",
+  "navigation_error": null,
+  "evaluation_error": null,
+  "count": 20,
+  "images": [
+    {
+      "index": 0,
+      "src": "https://www.daytonabeach.gov/Common/images/ajax-loader.gif",
+      "alt": "",
+      "title": "Loading",
+      "width": 66,
+      "height": 66,
+      "visible": false,
+      "loading": ""
+    },
+    {
+      "index": 1,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=17435",
+      "alt": "Home Icon",
+      "title": "",
+      "width": 58,
+      "height": 58,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 2,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=17386",
+      "alt": "Homepage",
+      "title": "",
+      "width": 219,
+      "height": 84,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 3,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=17396",
+      "alt": "Facebook",
+      "title": "",
+      "width": 53,
+      "height": 53,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 4,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=17404",
+      "alt": "Twitter",
+      "title": "",
+      "width": 53,
+      "height": 53,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 5,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=17398",
+      "alt": "Instagram",
+      "title": "",
+      "width": 53,
+      "height": 54,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 6,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=17406",
+      "alt": "YouTube",
+      "title": "",
+      "width": 53,
+      "height": 54,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 7,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=17402",
+      "alt": "",
+      "title": "",
+      "width": 53,
+      "height": 54,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 8,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=17400",
+      "alt": "",
+      "title": "",
+      "width": 53,
+      "height": 54,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 9,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=17394",
+      "alt": "Search1",
+      "title": "",
+      "width": 68,
+      "height": 68,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 10,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=19996&&thumbnailSize=Thumb25X25",
+      "alt": "Permits and Licensing ",
+      "title": "",
+      "width": 25,
+      "height": 25,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 11,
+      "src": "https://www.daytonabeach.gov/PhotoGallery/3/ThumbNails/January%202019%20Residential_25x25_thumb.JPG",
+      "alt": "Photograph of yellow house with brick driveway, manicured landscaping and oak tree in yard",
+      "title": "",
+      "width": 25,
+      "height": 25,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 12,
+      "src": "https://www.daytonabeach.gov/PhotoGallery/4/ThumbNails/Bethune%20Cookman%20University_25x25_thumb.jpg",
+      "alt": "Bethune Cookman University",
+      "title": "",
+      "width": 25,
+      "height": 25,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 13,
+      "src": "https://www.daytonabeach.gov/Assets/Images/IconShareFacebook.png",
+      "alt": "Facebook Opens in new window",
+      "title": "Share on Facebook",
+      "width": 13,
+      "height": 13,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 14,
+      "src": "https://www.daytonabeach.gov/Assets/Images/IconShareTwitter.png",
+      "alt": "Twitter Opens in new window",
+      "title": "Share on Twitter",
+      "width": 13,
+      "height": 13,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 15,
+      "src": "https://www.daytonabeach.gov/Assets/Images/IconShareEmail.png",
+      "alt": "Share Via Email",
+      "title": "",
+      "width": 14,
+      "height": 13,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 16,
+      "src": "https://www.daytonabeach.gov/Common/images/PhotoGallery2/SlideshowButton.png",
+      "alt": "View slideshow of this album's photos",
+      "title": "",
+      "width": 97,
+      "height": 25,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 17,
+      "src": "https://www.daytonabeach.gov/PhotoGallery/3/January%202019%20Residential.JPG",
+      "alt": "Photograph of yellow house with brick driveway, manicured landscaping and oak tree in yard",
+      "title": "",
+      "width": 5184,
+      "height": 3456,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 18,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=17430",
+      "alt": "World Famous Daytona Beach logo",
+      "title": "World Famous Daytona Beach logo",
+      "width": 311,
+      "height": 120,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 19,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=17391",
+      "alt": "",
+      "title": "",
+      "width": 2200,
+      "height": 1000,
+      "visible": true,
+      "loading": ""
+    }
+  ]
+}
