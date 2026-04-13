@@ -1,0 +1,1082 @@
+{
+  "requested_url": "https://www.daytonabeach.gov",
+  "final_url": "https://www.daytonabeach.gov",
+  "page_title": "Daytona Beach, FL - Official Website | Official Website",
+  "captured_at_utc": "2026-04-09T19:41:47.799593+00:00",
+  "navigation_mode": "networkidle",
+  "navigation_error": null,
+  "evaluation_error": null,
+  "count": 107,
+  "images": [
+    {
+      "index": 0,
+      "src": "https://www.daytonabeach.gov/Common/images/ajax-loader.gif",
+      "alt": "",
+      "title": "Loading",
+      "width": 66,
+      "height": 66,
+      "visible": false,
+      "loading": ""
+    },
+    {
+      "index": 1,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=17435",
+      "alt": "Home Icon",
+      "title": "",
+      "width": 58,
+      "height": 58,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 2,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=17386",
+      "alt": "Homepage",
+      "title": "",
+      "width": 219,
+      "height": 84,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 3,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=17396",
+      "alt": "Facebook",
+      "title": "",
+      "width": 53,
+      "height": 53,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 4,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=17404",
+      "alt": "Twitter",
+      "title": "",
+      "width": 53,
+      "height": 53,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 5,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=17398",
+      "alt": "Instagram",
+      "title": "",
+      "width": 53,
+      "height": 54,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 6,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=17406",
+      "alt": "YouTube",
+      "title": "",
+      "width": 53,
+      "height": 54,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 7,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=17402",
+      "alt": "",
+      "title": "",
+      "width": 53,
+      "height": 54,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 8,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=17400",
+      "alt": "",
+      "title": "",
+      "width": 53,
+      "height": 54,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 9,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=17394",
+      "alt": "Search1",
+      "title": "",
+      "width": 68,
+      "height": 68,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 10,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=22106",
+      "alt": "In_The_Works (1)",
+      "title": "",
+      "width": 488,
+      "height": 450,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 11,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=21782",
+      "alt": "WEB_Programs",
+      "title": "",
+      "width": 488,
+      "height": 450,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 12,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=21372",
+      "alt": "WEB_First Step Shelter_Jan 10 2023",
+      "title": "",
+      "width": 488,
+      "height": 450,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 13,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=22279",
+      "alt": "FB_Stay Connected",
+      "title": "",
+      "width": 488,
+      "height": 450,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 14,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=24395",
+      "alt": "Shadow of someone playing pickleball with the text &#34Pickleball Skills Clinic&#34 written over the",
+      "title": "",
+      "width": 488,
+      "height": 450,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 15,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=24386",
+      "alt": "SBA logo",
+      "title": "",
+      "width": 488,
+      "height": 450,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 16,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=24385",
+      "alt": "Marion Street Treatment Plant Circa 1970",
+      "title": "",
+      "width": 488,
+      "height": 450,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 17,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=23206",
+      "alt": "FB_Waiving of Permit Fees_Aug1",
+      "title": "",
+      "width": 488,
+      "height": 450,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 18,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=24381",
+      "alt": "Headshot of Commissioner Henry",
+      "title": "",
+      "width": 488,
+      "height": 450,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 19,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Sesquicentennial Logo",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 20,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Crab and Seafood Festival 2025",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 21,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Phebe Fuqua Accepting Young Local Government Officer of the Year ",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 22,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Image showing an outdoor table setup with items for sale during a community yard sale. ",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 23,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "A close-up picture of a person writing in a notebook.",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 24,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "A picture of shreded paper. ",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 25,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "A photo of a blue and white house. ",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 26,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "A picture of the girl&#39s flag football team smiling and sitting on the benches. ",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 27,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Photograph of Kristine Franklin holding Daytona Beach celebrating 150 years photo prop in museum.",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 28,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "picture of Main Street Arch while under construction ",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 29,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "detail of the Joe Petrali&#39s face on bronze scupture ",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 30,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Big Shark Gift Shop Highlight",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 31,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Image showing Breakers Oceanfront Park Proposed Playground",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 32,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Volusia Values Veterans County Logo on Gray Background",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 33,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Decorative Image Showing the Redemption of Eve Mural on Building",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 34,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Photograph showing smiling Kids at Summer Camp",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 35,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "2026 State of the City Booklet Highlight",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 36,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "A picture of an instructor teaching two people Tai Chi.",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 37,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Decorative image for city island seawall project",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 38,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Decorative Image Midtown Concert Series",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 39,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Water Meter Replacement Program ",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 40,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Mahjong Decorative Image ",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 41,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Zumba decorative image showing the name of the class",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 42,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Decorative Image Daytona Beach Ranks No. 9 Among U.S.",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 43,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Volusia County Logo",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 44,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "CRA Comprehensive Report decorative image Opens in new window",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 45,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Decorative image, fire station no.1 rendering",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 46,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Highlight - New Beginnings",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 47,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Graphic for Travel Audit Report ",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 48,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "C Highlight P Card ",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 49,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Decorative Image for $55 Million loans cover story",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 50,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Daytona Beach Neighborhood Roadway Improvements",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 51,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Fitness Challenge Highlight Decorative Image",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 52,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Decorative image for Highlight for Fire Station No. 1 Nov. 2025",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 53,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Decorative Image Main Street Streetscape",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 54,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Decorative Image Seabreeze High School Check Presentation",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 55,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Decorative Image Welcome Michael Chambliss Headshot",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 56,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Emergency Manager Richard Williams Photo",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 57,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Decorative Image Peninsula Womens Club",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 58,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Decorative Image for Security Update",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 59,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Decorative Image - Taxes at Work Highlight",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 60,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Photograph of Deputy Chief Jessica Matthews and Chief Drue Driscol",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 61,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Decorative Image for DART Streetwalk",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 62,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Black Heritage Trail - Signage Photo",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 63,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Headshot for Kim Flaherty",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 64,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "C Highlight PD Animal Control Services Announcement (1)",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 65,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Beautification Tree Advisory Board Members Needed Decorative Image",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 66,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "C Highlight Decorative Image Mayor&#39s Honor Program Logo",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 67,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "C Highlight Decorative Image Aaron Headshot",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 68,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "C Highlight Decorative Image",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 69,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "C Highlight Decorative Image",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 70,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Highlight - Decorative Image - Building Permit Activity and Housing Market Snapshot",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 71,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Building Hope: City Reconstructs Homes  for Low-Income Residents decorative image",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 72,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Jackie Robinson Ballpark Dugout Project decorative image",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 73,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "WARNING RIP Current Decorative Image",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 74,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Highlight - CM Update August - Meter Replacement Decorative Image",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 75,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Highlight Decorative Image Water Safety",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 76,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "City Auditor Abinet Y. Belachew headshot",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 77,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "James Lloyd, Sustainability and Resiliency Officer headshot",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 78,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Photograph of Mural at Halifax Harbor Marina ",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 79,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Copy of C Highlight Closure Pier",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 80,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Highlight August 2024 After School Program",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 81,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Pet Owner Reminders decorative image",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 82,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Decorative Image Volusia County Schools Achievement",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 83,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Highlight Decorative Image PD Episode 1",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 84,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Highlight decorative image for transforming cybersecurity",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 85,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Branding Districts Highlight Decorative Image",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 86,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Daisy Stocking Award Highlight Decorative Image",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 87,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "HL_Line Dance (2)",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 88,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Growth in Taxable Property Values Decorative Image",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 89,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Storm Guide Graphic",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 90,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Cypress Aquatic Center Decorative Photo",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 91,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "CRA Annual Report Decorative Image",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 92,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Water Quality Report Decorative Image",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 93,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Decorative Image of Water Droplet",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 94,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "lift station 34",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 95,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "In_The_Works (1)",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 96,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "WEB_Programs",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 97,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "WEB_First Step Shelter_Jan 10 2023",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 98,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "FB_Stay Connected",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 99,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=24395",
+      "alt": "Shadow of someone playing pickleball with the text &#34Pickleball Skills Clinic&#34 written over the",
+      "title": "",
+      "width": 488,
+      "height": 450,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 100,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "SBA logo",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 101,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "Marion Street Treatment Plant Circa 1970",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 102,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "FB_Waiving of Permit Fees_Aug1",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 103,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=24082",
+      "alt": "City of Daytona Beach 150 years anniversary logo with “World Famous Years” text and incorporation da",
+      "title": "City of Daytona Beach 150 years anniversary logo with “World Famous Years” text and incorporation da",
+      "width": 211,
+      "height": 189,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 104,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=18818",
+      "alt": "",
+      "title": "",
+      "width": 2200,
+      "height": 850,
+      "visible": true,
+      "loading": ""
+    },
+    {
+      "index": 105,
+      "src": "https://www.daytonabeach.gov/ImageRepository/Document?documentID=18819",
+      "alt": "",
+      "title": "",
+      "width": 2200,
+      "height": 850,
+      "visible": false,
+      "loading": ""
+    },
+    {
+      "index": 106,
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "",
+      "title": "",
+      "width": 1,
+      "height": 1,
+      "visible": false,
+      "loading": ""
+    }
+  ]
+}

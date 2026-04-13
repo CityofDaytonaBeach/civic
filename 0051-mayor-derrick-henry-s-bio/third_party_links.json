@@ -1,0 +1,199 @@
+{
+  "requested_url": "https://www.daytonabeach.gov/689/Mayor-Derrick-Henrys-bio",
+  "final_url": "https://www.daytonabeach.gov/689/Mayor-Derrick-Henrys-bio",
+  "page_title": "Mayor Derrick Henry's bio | Daytona Beach, FL - Official Website",
+  "captured_at_utc": "2026-04-09T19:44:35.676476+00:00",
+  "navigation_mode": "networkidle",
+  "navigation_error": null,
+  "evaluation_error": null,
+  "count": 17,
+  "third_party_links": [
+    {
+      "index": 5,
+      "href": "https://www.facebook.com/DBCityInfo/",
+      "rawHref": "https://www.facebook.com/DBCityInfo/",
+      "host": "www.facebook.com",
+      "text": "",
+      "ariaLabel": "",
+      "target": "_self",
+      "rel": "",
+      "visible": true
+    },
+    {
+      "index": 6,
+      "href": "https://twitter.com/CityDaytona",
+      "rawHref": "https://twitter.com/CityDaytona",
+      "host": "twitter.com",
+      "text": "",
+      "ariaLabel": "",
+      "target": "_self",
+      "rel": "",
+      "visible": true
+    },
+    {
+      "index": 7,
+      "href": "https://www.instagram.com/citydaytonabeach/",
+      "rawHref": "https://www.instagram.com/citydaytonabeach/",
+      "host": "www.instagram.com",
+      "text": "",
+      "ariaLabel": "",
+      "target": "_self",
+      "rel": "",
+      "visible": true
+    },
+    {
+      "index": 8,
+      "href": "https://www.youtube.com/channel/UCJDIxj_IYsySUP0gPPf05Tw",
+      "rawHref": "https://www.youtube.com/channel/UCJDIxj_IYsySUP0gPPf05Tw",
+      "host": "www.youtube.com",
+      "text": "",
+      "ariaLabel": "",
+      "target": "_self",
+      "rel": "",
+      "visible": true
+    },
+    {
+      "index": 9,
+      "href": "https://nextdoor.com/agency-detail/fl/daytona-beach/city-of-daytona-beach/",
+      "rawHref": "https://nextdoor.com/agency-detail/fl/daytona-beach/city-of-daytona-beach/",
+      "host": "nextdoor.com",
+      "text": "",
+      "ariaLabel": "",
+      "target": "_self",
+      "rel": "",
+      "visible": true
+    },
+    {
+      "index": 10,
+      "href": "https://www.linkedin.com/company/city-daytona-beach",
+      "rawHref": "https://www.linkedin.com/company/city-daytona-beach",
+      "host": "www.linkedin.com",
+      "text": "",
+      "ariaLabel": "",
+      "target": "_self",
+      "rel": "",
+      "visible": true
+    },
+    {
+      "index": 25,
+      "href": "https://seeclickfix.com/web_portal/ykL7Z7wnv5LcGvfw1HxwYwHr/issues/map",
+      "rawHref": "https://seeclickfix.com/web_portal/ykL7Z7wnv5LcGvfw1HxwYwHr/issues/map",
+      "host": "seeclickfix.com",
+      "text": "REPORT A CONCERN",
+      "ariaLabel": "REPort a Concern Opens in new window",
+      "target": "_blank",
+      "rel": "noopener",
+      "visible": true
+    },
+    {
+      "index": 27,
+      "href": "https://cc.codb.us/",
+      "rawHref": "https://cc.codb.us/",
+      "host": "cc.codb.us",
+      "text": "PAY UTILITY BILL",
+      "ariaLabel": "",
+      "target": "_self",
+      "rel": "",
+      "visible": true
+    },
+    {
+      "index": 28,
+      "href": "https://secure.rec1.com/FL/daytona-beach-leisure-services/catalog",
+      "rawHref": "https://secure.rec1.com/FL/daytona-beach-leisure-services/catalog",
+      "host": "secure.rec1.com",
+      "text": "ACTIVITY REGISTRATION & FACILITY RENTALS",
+      "ariaLabel": "",
+      "target": "_self",
+      "rel": "",
+      "visible": true
+    },
+    {
+      "index": 29,
+      "href": "https://www.codb.us/1337/DBTV-2023",
+      "rawHref": "https://www.codb.us/1337/DBTV-2023",
+      "host": "www.codb.us",
+      "text": "WATCH DBTV LIVE",
+      "ariaLabel": "",
+      "target": "_self",
+      "rel": "",
+      "visible": true
+    },
+    {
+      "index": 35,
+      "href": "https://www.volusia.org/services/public-protection/beach-safety/",
+      "rawHref": "https://www.volusia.org/services/public-protection/beach-safety/",
+      "host": "www.volusia.org",
+      "text": "Beach Info",
+      "ariaLabel": "Beach Info Opens in new window",
+      "target": "_blank",
+      "rel": "noopener",
+      "visible": true
+    },
+    {
+      "index": 37,
+      "href": "https://www.codb.us/794/Community-Redevelopment-Agency-CRA",
+      "rawHref": "https://www.codb.us/794/Community-Redevelopment-Agency-CRA",
+      "host": "www.codb.us",
+      "text": "Community Redevelopment Agency (CRA)",
+      "ariaLabel": "",
+      "target": "_self",
+      "rel": "",
+      "visible": true
+    },
+    {
+      "index": 38,
+      "href": "https://daytonabeach.myhubintranet.com/",
+      "rawHref": "https://daytonabeach.myhubintranet.com",
+      "host": "daytonabeach.myhubintranet.com",
+      "text": "Employee Login",
+      "ariaLabel": "Employee Login Opens in new window",
+      "target": "_blank",
+      "rel": "noopener",
+      "visible": true
+    },
+    {
+      "index": 40,
+      "href": "https://daytonabeachfl.justfoia.com/publicportal/home/track",
+      "rawHref": "https://daytonabeachfl.justfoia.com/publicportal/home/track",
+      "host": "daytonabeachfl.justfoia.com",
+      "text": "Public Records",
+      "ariaLabel": "",
+      "target": "_self",
+      "rel": "",
+      "visible": true
+    },
+    {
+      "index": 41,
+      "href": "https://riverfrontshopsofdaytona.com/",
+      "rawHref": "https://riverfrontshopsofdaytona.com/",
+      "host": "riverfrontshopsofdaytona.com",
+      "text": "Riverfront Shops of Daytona Beach",
+      "ariaLabel": "",
+      "target": "_self",
+      "rel": "",
+      "visible": true
+    },
+    {
+      "index": 42,
+      "href": "http://daytonabeach.com/",
+      "rawHref": "http://daytonabeach.com/",
+      "host": "daytonabeach.com",
+      "text": "Visit Daytona",
+      "ariaLabel": "",
+      "target": "_self",
+      "rel": "",
+      "visible": true
+    },
+    {
+      "index": 51,
+      "href": "https://www.civicplus.com/referral",
+      "rawHref": "https://www.civicplus.com/referral",
+      "host": "www.civicplus.com",
+      "text": "CivicPlus®",
+      "ariaLabel": "",
+      "target": "",
+      "rel": "",
+      "visible": true
+    }
+  ]
+}
