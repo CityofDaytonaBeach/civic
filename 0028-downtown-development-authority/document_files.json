@@ -1,0 +1,61 @@
+{
+  "requested_url": "https://www.daytonabeach.gov/386/Downtown-Development-Authority",
+  "final_url": "https://www.daytonabeach.gov/386/Downtown-Development-Authority",
+  "page_title": "Downtown Development Authority | Daytona Beach, FL - Official Website",
+  "captured_at_utc": "2026-04-10T12:14:31.694695+00:00",
+  "navigation_mode": "domcontentloaded",
+  "navigation_error": null,
+  "count": 5,
+  "documents": [
+    {
+      "href": "https://www.daytonabeach.gov/DocumentCenter/View/11400",
+      "rawHref": "/DocumentCenter/View/11400",
+      "host": "www.daytonabeach.gov",
+      "text": "social media policy",
+      "ariaLabel": "",
+      "target": "_self",
+      "rel": "",
+      "visible": true
+    },
+    {
+      "href": "https://www.daytonabeach.gov/DocumentCenter/View/22849/THE-CITY-OF-DAYTONA-BEACH-BOARD-LIST-",
+      "rawHref": "/DocumentCenter/View/22849/THE-CITY-OF-DAYTONA-BEACH-BOARD-LIST-",
+      "host": "www.daytonabeach.gov",
+      "text": "Current Members (PDF)",
+      "ariaLabel": "",
+      "target": "_self",
+      "rel": "",
+      "visible": false
+    },
+    {
+      "href": "https://www.daytonabeach.gov/DocumentCenter/Home/View/44",
+      "rawHref": "/DocumentCenter/Home/View/44",
+      "host": "www.daytonabeach.gov",
+      "text": "Introduction and History (PDF)",
+      "ariaLabel": "Introduction and History (PDF) Opens in new window",
+      "target": "_blank",
+      "rel": "",
+      "visible": false
+    },
+    {
+      "href": "https://www.daytonabeach.gov/DocumentCenter/View/19202/Board-Responsibilities-Function-Guide",
+      "rawHref": "/DocumentCenter/View/19202/Board-Responsibilities-Function-Guide",
+      "host": "www.daytonabeach.gov",
+      "text": "Responsibilities & Functions (PDF)",
+      "ariaLabel": "Responsibilities & Functions (PDF) Opens in new window",
+      "target": "_blank",
+      "rel": "",
+      "visible": false
+    },
+    {
+      "href": "https://www.daytonabeach.gov/DocumentCenter/View/22823/CODB-Board-Vacancies-02-20-24",
+      "rawHref": "/DocumentCenter/View/22823/CODB-Board-Vacancies-02-20-24",
+      "host": "www.daytonabeach.gov",
+      "text": "Vacancy List (PDF)",
+      "ariaLabel": "Vacancy List (PDF) Opens in new window",
+      "target": "_blank",
+      "rel": "",
+      "visible": false
+    }
+  ]
+}

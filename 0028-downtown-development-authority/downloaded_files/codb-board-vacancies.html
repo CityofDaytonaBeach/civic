@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Codb Board Vacancies - HTML PDF Replica</title>
+  <style>
+html,body{margin:0;padding:0;background:#fff;color:#111827;font:16px/1.5 "Segoe UI",Tahoma,Arial,sans-serif}
+body{min-height:100vh}
+body.high-contrast{background:#000;color:#fff}
+body.readable-font{font-family:Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}a:hover{text-decoration:underline}
+button,input{font:inherit}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.hidden{display:none!important}
+.skip-link{position:absolute;left:12px;top:12px;transform:translateY(-180%);background:#fff;color:#111827;padding:10px 14px;border-radius:10px;z-index:1000}
+.skip-link:focus{transform:translateY(0)}
+.pdf-shell{width:100%;max-width:none;margin:0;padding:0}
+.viewer{background:#fff;border:0;border-radius:0;box-shadow:none;overflow:hidden;min-height:100vh}
+.viewer.sidebar-collapsed .viewer-body{grid-template-columns:minmax(0,1fr) 300px}
+.viewer.sidebar-collapsed .sidebar{display:none}
+.viewer.tools-collapsed .viewer-body{grid-template-columns:220px minmax(0,1fr)}
+.viewer.tools-collapsed .tools{display:none}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 14px;background:#2b2f35;border-bottom:1px solid #1c1f24}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand__badge{width:28px;height:28px;border-radius:8px;background:#e53935;color:#fff;display:grid;place-items:center;font-weight:800}
+.brand__title{font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#f9fafb}
+.brand__sub{font-size:12px;color:#aeb8c4}
+.top-actions,.toolbar-actions,.mode-toggle,.page-nav,.zoom-controls,.tool-group{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.topbar,.toolbar,.sidebar,.tools,.sidebar__head,.tools__head,.thumb-link,.transcript-list summary,.transcript-list pre,.tools__body,.tools__body p,.tools__body li,.tools__body label{color:#f3f4f6}
+.ui-btn,.ui-link,.page-input,.zoom-select{display:inline-flex;align-items:center;justify-content:center;min-height:34px;padding:0 12px;border-radius:9px;border:1px solid #4a5058;background:#3b4149;color:#f3f4f6}
+.ui-btn[aria-pressed="true"],.ui-btn.active{background:#4b5563;border-color:#6b7280;color:#fff}
+.ui-btn:hover,.ui-link:hover{background:#4a5058;text-decoration:none}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 14px;background:#3a3f46;border-bottom:1px solid #2a2e34}
+.page-input,.zoom-select{width:72px;padding:0 8px;text-align:center}
+.viewer-body{display:grid;grid-template-columns:220px minmax(0,1fr) 300px;min-height:calc(100vh - 150px);background:#fff}
+.sidebar,.tools{background:#3a3f46;border-right:1px solid #2a2e34;overflow:auto}
+.tools{border-right:0;border-left:1px solid #2a2e34}
+.sidebar__head,.tools__head{padding:14px 16px;border-bottom:1px solid #2a2e34;font-weight:700}
+.thumb-list,.tools__body,.transcript-list{padding:14px;display:grid;gap:12px}
+.thumb-link{display:grid;gap:6px;padding:10px;border-radius:12px;border:1px solid #4a5058;background:#444a53;color:#e5e7eb}
+.thumb-link.active{outline:2px solid #d1d5db}
+.thumb-link span{font-size:12px;color:#b9c2cf}
+.viewer-main{overflow:auto;background:#fff}
+.mode-panels{position:relative;height:100%}
+.mode-panel{height:100%}
+.viewer-stage{padding:22px 24px 32px;background:#fff}
+.page-stack{display:grid;gap:26px;justify-content:stretch;transform-origin:top center}
+.page-card{width:100%;display:grid;justify-items:center}
+.page-label{font-size:13px;color:#374151;margin:0 0 8px;justify-self:start;width:min(100%,816px)}
+.pdf-page{position:relative;background:#fff;box-shadow:0 12px 28px rgba(0,0,0,.18);overflow:hidden}
+.pdf-page:focus-visible{outline:3px solid #111827;outline-offset:3px}
+.pdf-page img,.pdf-page svg{position:absolute;display:block}
+.vector-layer,.image-layer,.text-layer{position:absolute;inset:0}
+.text-layer{z-index:3}
+.text-layer--assistive{opacity:.015}
+.text-span{position:absolute;display:block;white-space:pre;transform-origin:top left;color:#111;line-height:1;overflow:visible;text-rendering:geometricPrecision;box-sizing:border-box;padding:0 6px 2px 0}
+.page-fallback{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.page-outline{position:absolute;inset:0;border:1px solid rgba(0,0,0,.08);pointer-events:none}
+.pdf-frame{width:100%;height:calc(100vh - 170px);border:0;background:#fff}
+.tools .ui-btn{justify-content:flex-start}
+.tools__body .tool-row{display:grid;gap:8px}
+.tools__body ul{margin:0;padding-left:18px}
+.transcript-list details{background:#444a53;border:1px solid #555c66;border-radius:12px;padding:10px 12px}
+.transcript-list summary{cursor:pointer;font-weight:700}
+.transcript-list pre{white-space:pre-wrap;word-break:break-word;font:13px/1.45 Consolas,"Courier New",monospace}
+.back-top{position:fixed;right:18px;bottom:18px;z-index:40;border:1px solid #4a5058;background:#2b2f35;color:#fff;border-radius:999px;padding:10px 14px;box-shadow:0 12px 28px rgba(0,0,0,.22)}
+.back-top:hover{background:#3b4149}
+body.high-contrast .viewer{background:#111;border-color:#000}
+body.high-contrast .topbar,body.high-contrast .toolbar,body.high-contrast .sidebar,body.high-contrast .tools{background:#111;color:#fff}
+body.high-contrast .ui-btn,body.high-contrast .ui-link,body.high-contrast .page-input,body.high-contrast .zoom-select,body.high-contrast .thumb-link,body.high-contrast .back-top{background:#000;border-color:#fff;color:#fff}
+body.high-contrast .pdf-page{box-shadow:0 0 0 2px #fff}
+@media(max-width:1180px){.viewer-body{grid-template-columns:180px minmax(0,1fr)}.tools{display:none}}
+@media(max-width:860px){.viewer-body,.viewer.sidebar-collapsed .viewer-body,.viewer.tools-collapsed .viewer-body{grid-template-columns:1fr}.sidebar,.tools{display:none}.toolbar{align-items:flex-start;flex-direction:column}.topbar{align-items:flex-start;flex-direction:column}.pdf-frame{height:70vh}}
+</style>
+</head>
+<body data-total-pages="1">
+  <a class="skip-link" href="#viewer-main">Skip to PDF content</a>
+  <a class="skip-link" href="#tools-panel">Skip to accessibility tools</a>
+  <main class="pdf-shell" id="pdf-main" role="main" aria-label="Accessible HTML version of Codb Board Vacancies">
+    <div class="viewer">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand__badge" aria-hidden="true">A</div>
+          <div>
+            <div class="brand__title">Codb Board Vacancies</div>
+            <div class="brand__sub">codb-board-vacancies.pdf - 1 page</div>
+          </div>
+        </div>
+      </header>
+        <section class="toolbar" aria-label="Document controls">
+        <div class="toolbar-actions">
+          <div class="tool-group" role="group" aria-label="Panel controls">
+            <button class="ui-btn" id="toggle-pages" type="button" aria-controls="pages-panel" aria-expanded="true" aria-pressed="true">Pages</button>
+            <button class="ui-btn" id="toggle-tools" type="button" aria-controls="tools-panel" aria-expanded="true" aria-pressed="true">Accessibility</button>
+            <button class="ui-btn" id="toggle-transcript" type="button" aria-controls="transcript-list transcript-panel" aria-expanded="false" aria-pressed="false">Transcript</button>
+          </div>
+          <div class="page-nav" role="group" aria-label="Page navigation">
+            <button class="ui-btn" id="prev-page" type="button">Previous</button>
+            <label class="sr-only" for="page-input">Current page</label>
+            <input class="page-input" id="page-input" type="number" min="1" max="1" inputmode="numeric">
+            <span>of 1</span>
+            <button class="ui-btn" id="next-page" type="button">Next</button>
+          </div>
+          <div class="zoom-controls" role="group" aria-label="Zoom controls">
+            <button class="ui-btn" id="zoom-out" type="button">-</button>
+            <span id="zoom-label" aria-live="polite">100%</span>
+            <button class="ui-btn" id="zoom-in" type="button">+</button>
+            <label class="sr-only" for="zoom-select">Zoom percent</label>
+            <select class="zoom-select" id="zoom-select" aria-label="Zoom percent">
+              <option value="50">50%</option>
+              <option value="75">75%</option>
+              <option value="100" selected>100%</option>
+              <option value="125">125%</option>
+              <option value="150">150%</option>
+              <option value="200">200%</option>
+            </select>
+            <button class="ui-btn" id="actual-size" type="button">Actual Size</button>
+            <button class="ui-btn" id="fit-page" type="button">Fit Page</button>
+            <button class="ui-btn" id="fit-width" type="button">Fit Width</button>
+          </div>
+        </div>
+        <div class="tool-group" aria-label="Viewer tools">
+          <button class="ui-btn" id="reset-view" type="button">Reset</button>
+        </div>
+      </section>
+      <div class="viewer-body">
+        <aside class="sidebar" id="pages-panel" aria-label="Pages">
+          <div class="sidebar__head">Pages</div>
+          <nav class="thumb-list" aria-label="Page thumbnails"><a class="thumb-link active" href="#page-1" data-page="1" aria-label="Jump to page 1"><strong>Page 1</strong></a></nav>
+        </aside>
+        <section class="viewer-main" id="viewer-main" tabindex="-1" role="region" aria-label="PDF pages">
+          <div class="viewer-stage">
+            <div class="page-stack" id="page-stack" role="document" aria-label="Codb Board Vacancies pages">
+    <article class="page-card" id="page-1" data-page="1">
+      <p class="page-label">Page 1 of 1</p>
+      <section class="pdf-page" role="region" tabindex="0" aria-roledescription="PDF page" aria-labelledby="page-1-title" aria-describedby="page-1-surface-note page-1-transcript" style="width:816.00px;height:1056.00px;">
+        <h2 class="sr-only" id="page-1-title">Page 1</h2>
+        <div class="sr-only" id="page-1-surface-note">Page 1 is rendered as structured HTML with selectable text, extracted images, and vector artwork.</div>
+        <div class="sr-only" id="page-1-transcript">Updated 04-02-26
+
+The City of Daytona Beach Citizen Boards
+Vacancies as of 04-01-26
+Vacancy indicates that no one is currently serving in the position.
+
+Board applications remain in an active file for 12 months from the date received by The City of
+Daytona Beach .
+Beautification/Tree Advisory Board
+• Four vacanc ies (Zone 2, term ending 12-
+31-26, Zone 3, term ending 12 -31-27,
+Zone 5, term ending 12 -31-27 &amp; Zone 6)
+Board of Adjustment
+• Two vacancies , Alternate &amp; Zone 6
+
+Board of Building Codes
+• Two vacancies
+Downtown Redevelopment Board
+• One vacan cy
+• Three terms expire d
+
+Historic Preservation Board
+• Two vacanc ies (Zone 3, and 5)
+
+Midtown Redevelopment Board
+• One vacanc y
+• One term expired 12 -31-23
+• Two terms expired 12-31-24
+Nuisance Abatement Board
+• One vacancy
+Parks &amp; Recreation Advisory Board
+• One Vacancy (Zone 3)
+Peabody Auditorium Advisory Board
+• Two vacanc ies (Zone 1 &amp; At-Large )
+
+Personnel Board
+• Three vacanc ies
+• One term expired on 06-16-23
+
+Planning Board
+• One term expired 12-31-24 (Zone 6 )
+
+Police and Fire Pension Board
+• One vacancy</div>
+        <svg class="vector-layer" width="816.00" height="1056.00" viewBox="0 0 816.00 1056.00" aria-hidden="true" focusable="false"><rect x="48.00" y="276.96" width="244.96" height="1.28" fill="rgb(0, 0, 0)" fill-opacity="1.0" stroke="none" stroke-opacity="None" stroke-width="1.33" rx="0" ry="0" /><rect x="48.00" y="366.88" width="144.00" height="1.28" fill="rgb(0, 0, 0)" fill-opacity="1.0" stroke="none" stroke-opacity="None" stroke-width="1.33" rx="0" ry="0" /><rect x="48.00" y="420.80" width="170.08" height="1.28" fill="rgb(0, 0, 0)" fill-opacity="1.0" stroke="none" stroke-opacity="None" stroke-width="1.33" rx="0" ry="0" /><rect x="48.00" y="474.72" width="238.40" height="1.28" fill="rgb(0, 0, 0)" fill-opacity="1.0" stroke="none" stroke-opacity="None" stroke-width="1.33" rx="0" ry="0" /><rect x="48.00" y="546.72" width="188.48" height="1.28" fill="rgb(0, 0, 0)" fill-opacity="1.0" stroke="none" stroke-opacity="None" stroke-width="1.33" rx="0" ry="0" /><rect x="48.00" y="600.64" width="224.48" height="1.28" fill="rgb(0, 0, 0)" fill-opacity="1.0" stroke="none" stroke-opacity="None" stroke-width="1.33" rx="0" ry="0" /><rect x="48.00" y="690.56" width="197.44" height="1.28" fill="rgb(0, 0, 0)" fill-opacity="1.0" stroke="none" stroke-opacity="None" stroke-width="1.33" rx="0" ry="0" /><rect x="48.00" y="744.48" width="244.48" height="1.28" fill="rgb(0, 0, 0)" fill-opacity="1.0" stroke="none" stroke-opacity="None" stroke-width="1.33" rx="0" ry="0" /><rect x="48.00" y="798.40" width="257.60" height="1.28" fill="rgb(0, 0, 0)" fill-opacity="1.0" stroke="none" stroke-opacity="None" stroke-width="1.33" rx="0" ry="0" /><rect x="48.00" y="852.48" width="114.72" height="1.28" fill="rgb(0, 0, 0)" fill-opacity="1.0" stroke="none" stroke-opacity="None" stroke-width="1.33" rx="0" ry="0" /><rect x="432.00" y="276.96" width="107.04" height="1.28" fill="rgb(0, 0, 0)" fill-opacity="1.0" stroke="none" stroke-opacity="None" stroke-width="1.33" rx="0" ry="0" /><rect x="432.00" y="332.32" width="209.12" height="1.28" fill="rgb(0, 0, 0)" fill-opacity="1.0" stroke="none" stroke-opacity="None" stroke-width="1.33" rx="0" ry="0" /><rect x="0.00" y="186.87" width="816.00" height="5.87" fill="rgb(250, 163, 31)" fill-opacity="1.0" stroke="none" stroke-opacity="None" stroke-width="1.33" rx="0" ry="0" /></svg>
+        <div class="image-layer"><img aria-hidden="true" alt="" src="data:image/jpeg;base64,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" style="left:308.00px;top:37.10px;width:199.06px;height:76.73px;"></div>
+        
+        <div class="text-layer"><span class="text-span" style="left:48.00px;top:18.02px;width:117.96px;min-height:22.64px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">Updated 04-02-26 </span><span class="text-span" style="left:248.16px;top:111.97px;width:330.16px;min-height:26.06px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:16.00px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">The City of Daytona Beach Citizen Boards </span><span class="text-span" style="left:309.76px;top:131.65px;width:211.44px;min-height:26.06px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:16.00px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">Vacancies as of 04-01-26  </span><span class="text-span" style="left:177.12px;top:151.32px;width:471.73px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">Vacancy indicates that no one is currently serving in the position. </span><span class="text-span" style="left:74.40px;top:205.23px;width:677.15px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">Board applications remain in an active file for 12 months from the date received by The City of </span><span class="text-span" style="left:350.57px;top:223.14px;width:124.85px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">Daytona Beach. </span><span class="text-span" style="left:48.01px;top:259.13px;width:259.08px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">Beautification/Tree Advisory Board  </span><span class="text-span" style="left:72.00px;top:278.81px;width:12.77px;min-height:20.98px;font-family:Symbol, sans-serif;font-size:14.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">•</span><span class="text-span" style="left:96.01px;top:277.08px;width:292.85px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">Four vacancies (Zone 2, term ending 12-</span><span class="text-span" style="left:96.04px;top:295.16px;width:269.01px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">31-26, Zone 3, term ending 12-31-27, </span><span class="text-span" style="left:96.05px;top:313.07px;width:288.54px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">Zone 5, term ending 12-31-27 &amp; Zone 6) </span><span class="text-span" style="left:48.07px;top:349.06px;width:154.13px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">Board of Adjustment </span><span class="text-span" style="left:72.00px;top:368.73px;width:12.77px;min-height:20.98px;font-family:Symbol, sans-serif;font-size:14.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">•</span><span class="text-span" style="left:96.01px;top:367.00px;width:254.77px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">Two vacancies, Alternate &amp; Zone 6 </span><span class="text-span" style="left:48.01px;top:402.99px;width:180.20px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">Board of Building Codes </span><span class="text-span" style="left:72.00px;top:422.81px;width:12.77px;min-height:20.98px;font-family:Symbol, sans-serif;font-size:14.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">•</span><span class="text-span" style="left:96.01px;top:421.08px;width:116.05px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">Two vacancies </span><span class="text-span" style="left:48.01px;top:456.91px;width:252.52px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">Downtown Redevelopment Board  </span><span class="text-span" style="left:72.00px;top:476.73px;width:12.77px;min-height:20.98px;font-family:Symbol, sans-serif;font-size:14.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">•</span><span class="text-span" style="left:96.01px;top:475.00px;width:108.36px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">One vacancy </span><span class="text-span" style="left:72.01px;top:494.64px;width:12.77px;min-height:20.98px;font-family:Symbol, sans-serif;font-size:14.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">•</span><span class="text-span" style="left:96.02px;top:492.92px;width:154.13px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">Three terms expired  </span><span class="text-span" style="left:48.04px;top:528.91px;width:202.60px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">Historic Preservation Board  </span><span class="text-span" style="left:72.00px;top:548.57px;width:12.77px;min-height:20.98px;font-family:Symbol, sans-serif;font-size:14.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">•</span><span class="text-span" style="left:96.01px;top:546.84px;width:227.27px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">Two vacancies (Zone 3, and 5) </span><span class="text-span" style="left:48.04px;top:582.83px;width:234.60px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">Midtown Redevelopment Board </span><span class="text-span" style="left:72.00px;top:602.49px;width:12.77px;min-height:20.98px;font-family:Symbol, sans-serif;font-size:14.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">•</span><span class="text-span" style="left:96.01px;top:600.76px;width:108.52px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">One vacancy </span><span class="text-span" style="left:72.01px;top:620.56px;width:12.77px;min-height:20.98px;font-family:Symbol, sans-serif;font-size:14.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">•</span><span class="text-span" style="left:96.02px;top:618.84px;width:201.50px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">One term expired 12-31-23 </span><span class="text-span" style="left:72.04px;top:638.48px;width:12.77px;min-height:20.98px;font-family:Symbol, sans-serif;font-size:14.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">•</span><span class="text-span" style="left:96.05px;top:636.75px;width:204.69px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">Two terms expired 12-31-24 </span><span class="text-span" style="left:48.07px;top:672.74px;width:207.56px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">Nuisance Abatement Board </span><span class="text-span" style="left:72.00px;top:692.41px;width:12.77px;min-height:20.98px;font-family:Symbol, sans-serif;font-size:14.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">•</span><span class="text-span" style="left:96.01px;top:690.68px;width:108.36px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">One vacancy </span><span class="text-span" style="left:48.01px;top:726.67px;width:254.61px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">Parks &amp; Recreation Advisory Board </span><span class="text-span" style="left:72.00px;top:746.49px;width:12.77px;min-height:20.98px;font-family:Symbol, sans-serif;font-size:14.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">•</span><span class="text-span" style="left:96.01px;top:744.76px;width:173.02px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">One Vacancy (Zone 3) </span><span class="text-span" style="left:48.01px;top:780.59px;width:267.72px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">Peabody Auditorium Advisory Board </span><span class="text-span" style="left:72.00px;top:800.41px;width:12.77px;min-height:20.98px;font-family:Symbol, sans-serif;font-size:14.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">•</span><span class="text-span" style="left:96.01px;top:798.68px;width:258.12px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">Two vacancies (Zone 1 &amp; At-Large) </span><span class="text-span" style="left:48.01px;top:834.67px;width:124.83px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">Personnel Board </span><span class="text-span" style="left:72.00px;top:854.33px;width:12.77px;min-height:20.98px;font-family:Symbol, sans-serif;font-size:14.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">•</span><span class="text-span" style="left:96.01px;top:852.60px;width:127.25px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">Three vacancies </span><span class="text-span" style="left:72.01px;top:872.24px;width:12.77px;min-height:20.98px;font-family:Symbol, sans-serif;font-size:14.72px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">•</span><span class="text-span" style="left:96.02px;top:870.52px;width:223.74px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">One term expired on 06-16-23 </span><span class="text-span" style="left:432.04px;top:259.12px;width:117.17px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">Planning Board </span><span class="text-span" style="left:456.00px;top:278.96px;width:13.36px;min-height:22.80px;font-family:Symbol, sans-serif;font-size:16.00px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">•</span><span class="text-span" style="left:480.00px;top:278.52px;width:259.93px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">One term expired 12-31-24 (Zone 6)</span><span class="text-span" style="left:432.00px;top:314.52px;width:219.25px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">Police and Fire Pension Board </span><span class="text-span" style="left:456.00px;top:334.32px;width:13.36px;min-height:22.80px;font-family:Symbol, sans-serif;font-size:16.00px;font-weight:400;font-style:normal;color:rgb(0, 0, 0);">•</span><span class="text-span" style="left:480.00px;top:333.88px;width:104.47px;min-height:23.98px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;font-size:14.72px;font-weight:700;font-style:normal;color:rgb(0, 0, 0);">One vacancy</span></div>
+        <div class="page-outline" aria-hidden="true"></div>
+      </section>
+    </article>
+    </div>
+          </div>
+        </section>
+        <aside class="tools" id="tools-panel" aria-label="Accessibility tools">
+          <div class="tools__head">Accessibility</div>
+          <div class="tools__body">
+            <div class="tool-row">
+              <button class="ui-btn" id="toggle-contrast" type="button" aria-pressed="false">High Contrast</button>
+              <button class="ui-btn" id="toggle-readable" type="button" aria-pressed="false">Readable Font</button>
+            </div>
+            <p>This HTML view exposes each page as a labeled region, keeps a plain-text transcript for every page when text can be extracted, and falls back to a high-resolution preview when visual fidelity is safer than positioned text.</p>
+            <ul>
+              <li>Semantic HTML pages: 1</li>
+              <li>Hybrid preview pages: 0</li>
+              <li>Image fallback pages: 0</li>
+              <li>Overlap-risk pages corrected: 0</li>
+            </ul>
+            <div class="status-chip"><strong>Status</strong> <span id="viewer-status" aria-live="polite">HTML page 1, 100% zoom</span></div>
+          </div>
+          <div class="tools__head hidden" id="transcript-panel">Transcript</div>
+          <div class="transcript-list hidden" id="transcript-list" role="region" aria-label="Page transcripts"><details open><summary id="page-1-transcript-summary">Page 1 transcript</summary><pre aria-labelledby="page-1-transcript-summary">Updated 04-02-26
+
+The City of Daytona Beach Citizen Boards
+Vacancies as of 04-01-26
+Vacancy indicates that no one is currently serving in the position.
+
+Board applications remain in an active file for 12 months from the date received by The City of
+Daytona Beach .
+Beautification/Tree Advisory Board
+• Four vacanc ies (Zone 2, term ending 12-
+31-26, Zone 3, term ending 12 -31-27,
+Zone 5, term ending 12 -31-27 &amp; Zone 6)
+Board of Adjustment
+• Two vacancies , Alternate &amp; Zone 6
+
+Board of Building Codes
+• Two vacancies
+Downtown Redevelopment Board
+• One vacan cy
+• Three terms expire d
+
+Historic Preservation Board
+• Two vacanc ies (Zone 3, and 5)
+
+Midtown Redevelopment Board
+• One vacanc y
+• One term expired 12 -31-23
+• Two terms expired 12-31-24
+Nuisance Abatement Board
+• One vacancy
+Parks &amp; Recreation Advisory Board
+• One Vacancy (Zone 3)
+Peabody Auditorium Advisory Board
+• Two vacanc ies (Zone 1 &amp; At-Large )
+
+Personnel Board
+• Three vacanc ies
+• One term expired on 06-16-23
+
+Planning Board
+• One term expired 12-31-24 (Zone 6 )
+
+Police and Fire Pension Board
+• One vacancy</pre></details></div>
+        </aside>
+      </div>
+    </div>
+  </main>
+  <button class="back-top" id="back-to-top" type="button" aria-controls="viewer-main" aria-label="Return to top">Top</button>
+  <script>
+(function(){
+  const viewer = document.querySelector('.viewer');
+  const pageInput = document.getElementById('page-input');
+  const pageTotal = Number(document.body.dataset.totalPages || '1');
+  const prevBtn = document.getElementById('prev-page');
+  const nextBtn = document.getElementById('next-page');
+  const zoomIn = document.getElementById('zoom-in');
+  const zoomOut = document.getElementById('zoom-out');
+  const fitWidth = document.getElementById('fit-width');
+  const fitPage = document.getElementById('fit-page');
+  const actualSize = document.getElementById('actual-size');
+  const zoomSelect = document.getElementById('zoom-select');
+  const zoomLabel = document.getElementById('zoom-label');
+  const pageStack = document.getElementById('page-stack');
+  const viewerMain = document.getElementById('viewer-main');
+  const pagesToggle = document.getElementById('toggle-pages');
+  const toolsToggle = document.getElementById('toggle-tools');
+  const toolsPanel = document.getElementById('tools-panel');
+  const transcriptToggle = document.getElementById('toggle-transcript');
+  const transcriptPanel = document.getElementById('transcript-panel');
+  const transcriptList = document.getElementById('transcript-list');
+  const contrastToggle = document.getElementById('toggle-contrast');
+  const readableToggle = document.getElementById('toggle-readable');
+  const resetBtn = document.getElementById('reset-view');
+  const viewerStatus = document.getElementById('viewer-status');
+  const backTop = document.getElementById('back-to-top');
+  const thumbs = Array.from(document.querySelectorAll('.thumb-link'));
+  let currentPage = 1;
+  let zoom = 1;
+
+  function clampPage(n){ return Math.max(1, Math.min(pageTotal, n || 1)); }
+  function setExpanded(button, expanded){
+    if (!button) return;
+    button.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    button.setAttribute('aria-pressed', expanded ? 'true' : 'false');
+  }
+  function setPressed(button, pressed){
+    if (!button) return;
+    button.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+  }
+  function syncPanelButtons(){
+    if (!viewer) return;
+    setExpanded(pagesToggle, !viewer.classList.contains('sidebar-collapsed'));
+    setExpanded(toolsToggle, !viewer.classList.contains('tools-collapsed'));
+    const transcriptOpen = transcriptPanel && !transcriptPanel.classList.contains('hidden');
+    setExpanded(transcriptToggle, Boolean(transcriptOpen));
+  }
+  function syncPreferenceButtons(){
+    setPressed(contrastToggle, document.body.classList.contains('high-contrast'));
+    setPressed(readableToggle, document.body.classList.contains('readable-font'));
+  }
+  function updateStatus(){
+    if (!viewerStatus) return;
+    viewerStatus.textContent = 'HTML page ' + currentPage + ', ' + Math.round(zoom * 100) + '% zoom';
+  }
+  function updateZoomUi(){
+    if (zoomLabel) zoomLabel.textContent = Math.round(zoom * 100) + '%';
+    if (zoomSelect) zoomSelect.value = String(Math.round(zoom * 100));
+  }
+  function syncButtons(){
+    thumbs.forEach(link => link.classList.toggle('active', Number(link.dataset.page) === currentPage));
+    updateStatus();
+  }
+  function scrollToPage(page){
+    currentPage = clampPage(page);
+    pageInput.value = String(currentPage);
+    const el = document.getElementById('page-' + currentPage);
+    if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    syncButtons();
+  }
+  function scrollToTop(){
+    currentPage = 1;
+    pageInput.value = '1';
+    if (viewerMain) {
+      viewerMain.scrollTo({top: 0, behavior: 'smooth'});
+    }
+    window.scrollTo({top: 0, behavior: 'smooth'});
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    syncButtons();
+  }
+  function applyZoom(){
+    if (!pageStack) return;
+    pageStack.style.zoom = String(zoom);
+    updateZoomUi();
+    updateStatus();
+  }
+  function fitToWidth(){
+    const page = document.querySelector('.pdf-page');
+    if (!page) return;
+    const width = page.getBoundingClientRect().width / zoom;
+    const target = Math.max(0.5, Math.min(2.25, (viewerMain.clientWidth - 48) / width));
+    zoom = target;
+    applyZoom();
+  }
+  function fitToPage(){
+    const page = document.querySelector('.pdf-page');
+    if (!page) return;
+    const width = page.getBoundingClientRect().width / zoom;
+    const height = page.getBoundingClientRect().height / zoom;
+    const widthZoom = (viewerMain.clientWidth - 48) / width;
+    const heightZoom = (viewerMain.clientHeight - 72) / height;
+    zoom = Math.max(0.5, Math.min(2.25, Math.min(widthZoom, heightZoom)));
+    applyZoom();
+  }
+  prevBtn.addEventListener('click', () => scrollToPage(currentPage - 1));
+  nextBtn.addEventListener('click', () => scrollToPage(currentPage + 1));
+  pageInput.addEventListener('change', () => scrollToPage(Number(pageInput.value)));
+  zoomIn.addEventListener('click', () => { zoom = Math.min(2.25, zoom + 0.1); applyZoom(); });
+  zoomOut.addEventListener('click', () => { zoom = Math.max(0.5, zoom - 0.1); applyZoom(); });
+  fitWidth.addEventListener('click', fitToWidth);
+  if (fitPage) fitPage.addEventListener('click', fitToPage);
+  if (actualSize) actualSize.addEventListener('click', () => { zoom = 1; applyZoom(); });
+  if (zoomSelect) zoomSelect.addEventListener('change', () => {
+    const nextZoom = Number(zoomSelect.value) / 100;
+    if (!Number.isFinite(nextZoom)) return;
+    zoom = Math.max(0.5, Math.min(2.25, nextZoom));
+    applyZoom();
+  });
+  if (pagesToggle) pagesToggle.addEventListener('click', () => {
+    viewer.classList.toggle('sidebar-collapsed');
+    syncPanelButtons();
+  });
+  toolsToggle.addEventListener('click', () => {
+    viewer.classList.toggle('tools-collapsed');
+    syncPanelButtons();
+  });
+  transcriptToggle.addEventListener('click', () => {
+    transcriptPanel.classList.toggle('hidden');
+    transcriptList.classList.toggle('hidden');
+    syncPanelButtons();
+  });
+  contrastToggle.addEventListener('click', () => {
+    document.body.classList.toggle('high-contrast');
+    syncPreferenceButtons();
+  });
+  readableToggle.addEventListener('click', () => {
+    document.body.classList.toggle('readable-font');
+    syncPreferenceButtons();
+  });
+  resetBtn.addEventListener('click', () => {
+    zoom = 1;
+    applyZoom();
+    document.body.classList.remove('high-contrast','readable-font');
+    transcriptPanel.classList.add('hidden');
+    transcriptList.classList.add('hidden');
+    viewer.classList.remove('sidebar-collapsed','tools-collapsed');
+    syncPreferenceButtons();
+    syncPanelButtons();
+    scrollToTop();
+  });
+  if (backTop) backTop.addEventListener('click', scrollToTop);
+  thumbs.forEach(link => link.addEventListener('click', (ev) => { ev.preventDefault(); scrollToPage(Number(link.dataset.page)); }));
+  const observer = new IntersectionObserver((entries) => {
+    const visible = entries.filter(entry => entry.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
+    if (!visible) return;
+    currentPage = clampPage(Number(visible.target.dataset.page));
+    pageInput.value = String(currentPage);
+    syncButtons();
+  }, {root: viewerMain, threshold: [0.55, 0.8]});
+  document.querySelectorAll('.page-card').forEach(card => observer.observe(card));
+  pageInput.value = '1';
+  syncPanelButtons();
+  syncPreferenceButtons();
+  syncButtons();
+  fitToPage();
+  window.addEventListener('resize', fitToPage);
+})();
+</script>
+</body>
+</html>
